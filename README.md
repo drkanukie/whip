@@ -9,3 +9,8 @@ The whip website
 + Commit README.md
 + Sync to github and this file will change
 
+# 9 Dec changes
+
++ Added some stock images to /assets
+
+
