@@ -173,6 +173,11 @@ nav ul li a:hover {
   background: center no-repeat;
 }
 
+#choose_topDiv {
+  height: 350px;
+  background-color: #6BBFC4;
+}
+
 .automobile-picker {
   width: 20%;
   float: left;
