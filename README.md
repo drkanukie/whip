@@ -16,4 +16,9 @@ The whip website
 # 3 Jan changes
 
 + added sublime projects and formatting
++ added all pages with their links
 
+## Working on
+
++ flexiboxes
++ HTML 5 Layout
