@@ -13,4 +13,7 @@ The whip website
 
 + Added some stock images to /assets
 
+# 3 Jan changes
+
++ added sublime projects and formatting
 
