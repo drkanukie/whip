@@ -18,7 +18,13 @@ The whip website
 + added sublime projects and formatting
 + added all pages with their links
 
+#4 Jan changes
+
++ 
+
 ## Working on
 
 + flexiboxes
 + HTML 5 Layout
++ finishing the customizer page layout
++ start work on local storage if possible
