@@ -7,13 +7,36 @@
   <!-- <link rel="stylesheet" type="text/css" href="css/mystyles.css" /> -->
   <link rel="page icon" type="image/png" href="assets/favicon.png" />
   <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <style type="text/css">
+  fieldset.radiogroup {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 1.25em;
+    padding: .125em;
+  }
+  
+  fieldset.radiogroup legend {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    margin-left: 20px;
+    font-size: 100%;
+    color: black;
+  }
+  
+  ul.radio {
+    margin: 0;
+    padding: 0;
+    margin-left: 20px;
+    list-style: none;
+  }
+  </style>
 </head>
 
 <body>
   <header class="parallax">
     <div id="header-inner">
-      <a href="index.html
-" id="logo"><img src="assets/logo.png" /></a>
+      <a href="index.html" id="logo"><img src="assets/logo.png" /></a>
       <nav class="nav-parallax">
         <a href="#" id="menu-icon"></a>
         <ul>
@@ -42,46 +65,19 @@
       <aside class="customizer-aside">
       </aside>
     </section>
-    <section class="customizer-config" id="header-inner">
-      <section class="white">
-        <div id="color">
-          <h5>Colour</h5>
-          <hr>
-        </div>
-      </section>
-    </section>
-    <section class="customizer-config" id="header-inner">
-      <section class="white">
-        <div id="engine">
-          <h5>Engine</h5>
-          <hr>
-        </div>
-      </section>
-    </section>
-    <section class="customizer-config" id="header-inner">
-      <section class="white">
-        <div id="rims">
-          <h5>Rims</h5>
-          <hr>
-        </div>
-      </section>
-    </section>
-    <section class="customizer-config" id="header-inner">
-      <section class="white">
-        <div id="tyres">
-          <h5>Tyres</h5>
-          <hr>
-        </div>
-      </section>
-    </section>
-    <section class="customizer-config" id="header-inner">
-      <section class="white">
-        <div id="decor">
-          <h5>Decor</h5>
-          <hr>
-        </div>
-      </section>
-    </section>
+    <fieldset class="radiogroup">
+      <legend>Colour</legend>
+      <ul class="radio">
+        <li>
+          <input type="radio" name="color" id="color1" value="red" checked />
+          <label for="color1">Red</label>
+          <input type="radio" name="color" id="color2" value="green" />
+          <label for="color2">Green</label>
+          <input type="radio" name="color" id="color3" value="blue" />
+          <label for="color3">Blue</label>
+        </li>
+      </ul>
+    </fieldset>
   </form>
   <footer>
     <ul class="social-links">
