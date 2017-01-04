@@ -31,20 +31,61 @@
     list-style: none;
   }
   
+  .radio i {
+    margin-left: 1rem;
+  }
+  
   .swatch {
     display: inline-block;
     width: 1.6rem;
     height: 1.6rem;
     border-radius: 0.8rem;
     margin-left: 0.5rem;
+    margin-right: 1.5rem;
   }
   
   .red {
-    background-color: red;
+    background-color: #EB4915;
   }
   
   .green {
-    background-color: green;
+    background-color: #6ECF70;
+  }
+  
+  .blue {
+    background-color: #3B80DA;
+  }
+  
+  .yellow {
+    background-color: #F1EA15;
+  }
+  
+  .white {
+    background-color: #EDEDED;
+  }
+  
+  .starburst {
+    background-color: #EE8A2C;
+  }
+  
+  .mahogany {
+    background-color: #4F2F11;
+  }
+  
+  .oak {
+    background-color: #975B22;
+  }
+  
+  .beech {
+    background-color: #B4A494;
+  }
+  
+  .v4 {
+    background-color: #E3E3E3;
+  }
+  
+  .v6 {
+    background-color: #B6B6B6;
   }
   </style>
   }
@@ -91,9 +132,30 @@
           <input type="radio" name="color" id="color2" value="green" />
           <label for="color2">Green<span class="green swatch"></span></label>
           <input type="radio" name="color" id="color3" value="blue" />
-          <label for="color3">Blue</label>
+          <label for="color3">Blue<span class="blue swatch"></span></label>
           <input type="radio" name="color" id="color4" value="yellow" />
-          <label for="color4">Yellow</label>
+          <label for="color4">Yellow<span class="yellow swatch"></span></label>
+          <input type="radio" name="color" id="color5" value="white" />
+          <label for="color5">White<span class="white swatch"></span></label>
+          <input type="radio" name="color" id="color6" value="starburst" />
+          <label for="color6">Starburst<span class="starburst swatch"></span></label>
+          <input type="radio" name="color" id="color7" value="mahogany" />
+          <label for="color7">Mahogany<span class="mahogany swatch"></span></label>
+          <input type="radio" name="color" id="color8" value="oak" />
+          <label for="color8">Oak<span class="oak swatch"></span></label>
+          <input type="radio" name="color" id="color9" value="beech" />
+          <label for="color9">Beech<span class="beech swatch"></span></label>
+        </li>
+      </ul>
+    </fieldset>
+    <fieldset>
+      <legend>Engine</legend>
+      <ul class="radio">
+        <li>
+          <input type="radio" name="engine" id="engine1" value="v4" checked />
+          <label for="engine1">V4 250hp<span class="v4 swatch"></span></label>
+          <input type="radio" name="engine" id="engine2" value="v6" />
+          <label for="engine2">V6 375hp<span class="v6 swatch"></span></label>
         </li>
       </ul>
     </fieldset>
