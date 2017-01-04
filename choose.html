@@ -30,7 +30,24 @@
     margin-left: 20px;
     list-style: none;
   }
+  
+  .swatch {
+    display: inline-block;
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 0.8rem;
+    margin-left: 0.5rem;
+  }
+  
+  .red {
+    background-color: red;
+  }
+  
+  .green {
+    background-color: green;
+  }
   </style>
+  }
 </head>
 
 <body>
@@ -70,11 +87,13 @@
       <ul class="radio">
         <li>
           <input type="radio" name="color" id="color1" value="red" checked />
-          <label for="color1">Red</label>
+          <label for="color1">Red<span class="red swatch"></span></label>
           <input type="radio" name="color" id="color2" value="green" />
-          <label for="color2">Green</label>
+          <label for="color2">Green<span class="green swatch"></span></label>
           <input type="radio" name="color" id="color3" value="blue" />
           <label for="color3">Blue</label>
+          <input type="radio" name="color" id="color4" value="yellow" />
+          <label for="color4">Yellow</label>
         </li>
       </ul>
     </fieldset>
