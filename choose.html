@@ -12,7 +12,6 @@
     margin: 0;
     padding: 0;
     margin-bottom: 1.25em;
-    padding: .125em;
   }
   
   fieldset.radiogroup legend {
@@ -28,6 +27,7 @@
     margin: 0;
     padding: 0;
     margin-left: 20px;
+    margin-bottom: 10px;
     list-style: none;
   }
   
@@ -86,6 +86,26 @@
   
   .v6 {
     background-color: #B6B6B6;
+  }
+  
+  .v8 {
+    background-color: #7F7F7F;
+  }
+  
+  .v10 {
+    background-color: #5E5E5E;
+  }
+  
+  .v12 {
+    background-color: #3A3A3A;
+  }
+  
+  .v12plus {
+    background-color: #000000;
+  }
+  
+  .silver-alloy {
+    background-color: #DFD6DD;
   }
   </style>
   }
@@ -148,14 +168,31 @@
         </li>
       </ul>
     </fieldset>
-    <fieldset>
+    <fieldset class="radiogroup">
       <legend>Engine</legend>
       <ul class="radio">
         <li>
           <input type="radio" name="engine" id="engine1" value="v4" checked />
-          <label for="engine1">V4 250hp<span class="v4 swatch"></span></label>
+          <label for="engine1">V4 250hp (£4,000)<span class="v4 swatch"></span></label>
           <input type="radio" name="engine" id="engine2" value="v6" />
-          <label for="engine2">V6 375hp<span class="v6 swatch"></span></label>
+          <label for="engine2">V6 375hp (£12,000)<span class="v6 swatch"></span></label>
+          <input type="radio" name="engine" id="engine3" value="v8" />
+          <label for="engine3">V8 525hp (£32,000)<span class="v8 swatch"></span></label>
+          <input type="radio" name="engine" id="engine4" value="v10" />
+          <label for="engine4">V10 650hp (£75,000)<span class="v10 swatch"></span></label>
+          <input type="radio" name="engine" id="engine5" value="v12" />
+          <label for="engine5">V12 780hp (£250,000)<span class="v12 swatch"></span></label>
+          <input type="radio" name="engine" id="engine6" value="v12+" />
+          <label for="engine6">V12+ 1000hp (£750,000)<span class="v12plus swatch"></span></label>
+        </li>
+      </ul>
+    </fieldset>
+    <fieldset class="radiogroup">
+      <legend>Rims</legend>
+      <ul class="radio">
+        <li>
+          <input type="radio" name="rims" id="rims1" value="silver alloy" checked />
+          <label for="rims1">Silver Alloy (£1,000)<span class="silver-alloy swatch"></span></label>
         </li>
       </ul>
     </fieldset>
