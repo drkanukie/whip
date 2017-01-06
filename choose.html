@@ -289,6 +289,7 @@
     <p>Total:
       <output type="number" name="price" id="output"></output>
     </p>
+    <button type="button" onclick="store()">Add To Cart</button>
   </form>
   <footer>
     <ul class="social-links">
@@ -302,22 +303,28 @@
 <script type="text/javascript">
 $(document).ready(function() {
 
-  console.log(document.getElementById("customize-form").innerHTML);
 
-  if (typeof(Storage) !== "undefined") {
-    // Store
-    formdata = localStorage.getItem("formdata");
-    if (formdata) {
-      document.getElementById("customize-form").innerHTML = formdata;
-    }
-    console.log(formdata);
-    //Retrieve
 
-  } else {
-    console.log("Sorry, your browser does not support Web Storage...");
+  function store() {
+    var priceForm = document.GetElementById("total")
+    localStorage.setItem("total", priceForm.value)
+    console.log(priceForm)
   }
 
+  // console.log(document.getElementById("customize-form").innerHTML);
 
+  // if (typeof(Storage) !== "undefined") {
+  // Store
+  //   formdata = localStorage.getItem("formdata");
+  //    if (formdata) {
+  //     document.getElementById("customize-form").innerHTML = formdata;
+  //   }
+  //   console.log(formdata);
+  //Retrieve
+
+  //  } else {
+  //   console.log("Sorry, your browser does not support Web Storage...");
+  // }
 
 
 
