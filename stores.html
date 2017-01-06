@@ -4,9 +4,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8" />
   <title>Whip | Choose your ride</title>
-  <link rel="stylesheet" type="text/css" href="css/mystyles.css" />
+  <!-- <link rel="stylesheet" type="text/css" href="css/mystyles.css" /> -->
   <link rel="page icon" type="image/png" href="assets/favicon.png" />
   <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <style type="text/css">
+  .width-limit {
+    display: block;
+    margin: auto;
+    width: 50%;
+    text-align: center;
+  }
+  
+  hr {
+    max-width: 50%;
+  }
+  
+  #filler {
+    height: 30rem;
+  }
+  </style>
 </head>
 
 <body>
@@ -21,10 +37,36 @@
           <li><a href="decide.html">Decide</a></li>
           <li><a href="stores.html" class="current">Stores</a></li>
           <li><a href="sources.html">Sources</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
+  <section id="demo" class="width-limit">
+    <h2>Demo</h2>
+    <hr>
+    <!-- <iframe width="420" height="315" src="https://www.youtube.com/embed/XGSy3_Czz8k"> INSERT DEMO VIDEO HERE-->
+    </iframe>
+    <div id="filler"></div>
+  </section>
+  <section id="sources" class="width-limit">
+    <h2>Sources</h2>
+    <hr>
+    <div id="filler"></div>
+  </section>
+  <section id="links" class="width-limit">
+    <h2>Links</h2>
+    <hr>
+    <div id="filler"></div>
+  </section>
+  <footer>
+    <ul class="social-links">
+      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+      <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+      <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
+    </ul>
+  </footer>
 </body>
 
 </html>

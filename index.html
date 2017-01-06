@@ -10,7 +10,7 @@
 </head>
 
 <body>
-  <header class="parallax">
+  <header class="">
     <div id="header-inner">
       <a href="index.html" id="logo"><img src="assets/logo.png" /></a>
       <nav class="nav-parallax">
@@ -21,6 +21,7 @@
           <li><a href="decide.html">Decide</a></li>
           <li><a href="stores.html">Stores</a></li>
           <li><a href="sources.html">Sources</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -107,5 +108,22 @@
   </footer>
   <!-- This is the end of the contact section -->
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+$(function() {
+  $(".peek-a-boo").css({
+    top: -200
+  });
+  $(window).scroll(function() {
+    if ($(window).scrollTop() > 80)
+      $(".peek-a-boo").stop(true).animate({
+        top: 0
+      }, 200);
+    else
+      $(".peek-a-boo").animate({
+        top: -200
+      }, 200);
+  });
+});
+</script>
 
 </html>
