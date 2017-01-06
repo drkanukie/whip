@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <title>Whip | Choose your ride</title>
+  <!--<link rel="stylesheet" type="text/css" href="css/mystyles.css" /> -->
+  <link rel="page icon" type="image/png" href="assets/favicon.png" />
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <style type="text/css">
+  .clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  
+  .testamonial-left {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  
+  .wrapper-left {
+    float: left;
+    width: 100%;
+  }
+  
+  .wrapper-right {
+    float: right;
+    width: 100%;
+  }
+  
+  article {
+    float: left;
+    margin: 0 auto;
+    width: 50%;
+  }
+  
+  aside {
+    float: right;
+    margin: 0 auto;
+    width: 50%;
+    height: auto;
+  }
+  
+  .padding-article {
+    padding: 5rem;
+  }
+  
+  #guarantee {
+    background-image: url("assets/images/guarantee.jpg");
+  }
+  
+  #satisfaction {
+    background-image: url("assets/images/satisfaction.jpg");
+  }
+  
+  #promotion {
+    background-image: url("assets/images/promotion.jpg");
+  }
+  
+  #map {
+    height: 40rem;
+    width: 40rem;
+  }
+  
+  .picture {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    width: 50%;
+    height: 25rem;
+  }
+  
+  #courier {
+    background-image: url("assets/images/courier.jpg");
+  }
+  
+  #inner-map {
+    display: block;
+    margin: auto;
+    width: 40%;
+    text-align: center;
+  }
+  </style>
+</head>
+
+<body>
+  <header class="parallax">
+    <div id="header-inner">
+      <a href="index.html" id="logo"><img src="assets/logo.png" /></a>
+      <nav class="nav-parallax">
+        <a href="#" id="menu-icon"></a>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="choose.html">Choose</a></li>
+          <li><a href="decide.html" class="current">Decide</a></li>
+          <li><a href="stores.html">Stores</a></li>
+          <li><a href="sources.html">Sources</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <section class=" testamonial-left">
+    <article class="picture " id="courier">
+    </article>
+    <article class="padding-article">
+      <h2>Package</h2>
+      <p>Our package come equipt with anti-static and rattle technology. This means while your vehicle is in transit it won't get damaged and will arrive in imaculate condition.</p>
+    </article>
+  </section>
+  <section class="testamonial-left">
+    <article class="padding-article">
+      <h2>Guarantee</h2>
+      <p>We guarantee that your vehicle will arrive within 10 working days, delivered within the time span sent to your mobile device via text.</p>
+    </article>
+    <article class="picture " id="guarantee">
+    </article>
+  </section>
+  <section class="testamonial-left">
+    <article class="picture " id="satisfaction">
+    </article>
+    <article class="padding-article">
+      <h2>Satisfaction</h2>
+      <p>Our customer satisfaction is one of the highest in the vintage vehicle market. Clocking in at 98% delivery satisfaction last year, your vehicle is safe in our hands.</p>
+    </article>
+  </section>
+  <section class="testamonial-left">
+    <article class="padding-article">
+      <h2>Promotion</h2>
+      <p>If your vehicle is worth over £25,000 then we will deliver it within 7 working days free of charge. Your designated driver will also speak with you to arrange a time that fits you for the delivery.</p>
+    </article>
+    <article class="picture " id="promotion">
+    </article>
+  </section>
+  <hr>
+  <section id="inner-map">
+    <h2>Find our delivery range on the map!</h2>
+    <div id="map"></div>
+  </section>
+  <hr>
+  <footer>
+    <ul class="social-links">
+      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+      <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+      <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
+    </ul>
+  </footer>
+</body>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGUMbCFHnewltppHjmjv3eZMHYRnGHzng&callback=initMap">
+</script>
+<script>
+// AIzaSyCkUOdZ5y7hMm0yrcCQoCvLwzdM6M8s5qk 
+
+
+
+function initMap() {
+  var lincoln = {
+    lat: 53.230737,
+    lng: -0.536323
+  };
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 7,
+    center: lincoln
+  });
+  var marker = new google.maps.Marker({
+    position: lincoln,
+    map: map
+  });
+  var cityCircle = new google.maps.Circle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0.8,
+    strokeWeight: 2,
+    fillColor: '#FF0000',
+    fillOpacity: 0.35,
+    map: map,
+    center: lincoln,
+    radius: 100000
+  });
+}
+</script>
+
+</html>
