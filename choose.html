@@ -160,6 +160,39 @@
   .grey-vinyl {
     background-color: #898585;
   }
+  
+  .inner-width {
+    width: 50%;
+    display: block;
+    margin: auto;
+    text-align: center;
+  }
+  
+  hr {
+    width: 50%;
+    color: #EDEDED;
+    opacity: 0.3;
+  }
+  
+  .picture {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    width: 50%;
+    height: 25rem;
+  }
+  
+  #car_chosen {
+    background-image: url("assets/images/car1.jpg");
+  }
+  
+  .image-align {
+    display: block;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
   </style>
 </head>
 
@@ -292,6 +325,18 @@
     </p>
     <!-- <button type="button" onclick="store()">Add To Cart</button> -->
   </form>
+  <section class="inner-width">
+    <h2>Summary</h2>
+    <hr>
+    <div class="picture image-align" id="car_chosen"></div>
+    <h3>Model</h3>
+    <h3>Price</h3>
+    <h2>Specs</h2>
+    <hr>
+    <section id="specs">
+      <p>Enter specs here</p>
+    </section>
+  </section>
   <footer>
     <ul class="social-links">
       <li><a href="#"><i class="fa fa-facebook"></i></a></li>
