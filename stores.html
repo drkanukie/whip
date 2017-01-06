@@ -7,20 +7,53 @@
   <!-- <link rel="stylesheet" type="text/css" href="css/mystyles.css" /> -->
   <link rel="page icon" type="image/png" href="assets/favicon.png" />
   <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <script>
+  function resizeIframe(obj) {
+    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+  }
+  </script>
   <style type="text/css">
   .width-limit {
-    display: block;
     margin: auto;
-    width: 50%;
+    width: 75%;
     text-align: center;
+    display: block;
+    height: auto;
   }
   
-  hr {
-    max-width: 50%;
-  }
+  hr {}
   
   #filler {
-    height: 30rem;
+    height: 25rem;
+  }
+  
+  .video {
+    float: left;
+    max-width: 112rem;
+    margin: auto;
+    display: flex;
+  }
+  
+  .testamonial-left {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: 75%;
+    margin: auto;
+  }
+  
+  .picture {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    width: 50%;
+    height: 25rem;
+  }
+  
+  .padding-article {
+    margin: 2rem;
   }
   </style>
 </head>
@@ -42,12 +75,15 @@
       </nav>
     </div>
   </header>
-  <section id="demo" class="width-limit">
-    <h2>Demo</h2>
-    <hr>
-    <!-- <iframe width="420" height="315" src="https://www.youtube.com/embed/XGSy3_Czz8k"> INSERT DEMO VIDEO HERE-->
-    </iframe>
-    <div id="filler"></div>
+  <section class=" testamonial-left">
+    <article class="picture " id="video">
+      <iframe onload="resizeIframe(this)" src="https://www.youtube.com/embed/UlnibxsxcmY" frameborder="0" scrolling="no" allowfullscreen></iframe>
+    </article>
+    <article class="padding-article">
+      <h2>Demo</h2>
+      <hr>
+      <p>This is some text about the demo video.</p>
+    </article>
   </section>
   <section id="sources" class="width-limit">
     <h2>Sources</h2>
