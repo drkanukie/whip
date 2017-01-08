@@ -323,7 +323,8 @@
     <p>Total:
       <output type="number" name="price" id="output"></output>
     </p>
-    <!-- <button type="button" onclick="store()">Add To Cart</button> -->
+    <button id="addToCart">Add To Cart</button>
+    <button id="showPrice">Show Price</button>
   </form>
   <section class="inner-width">
     <h2>Summary</h2>
@@ -351,11 +352,29 @@ $(document).ready(function() {
 
 
 
-  function store() {
-    var priceForm = document.GetElementById("total")
-    localStorage.setItem("total", priceForm.value)
-    console.log(priceForm)
-  }
+
+
+  $('#addToCart').on('click', function() {
+
+    $('input[type="radio"]').each(function() {
+      var id = $(this).attr('id');
+      var value = $(this).val();
+      localStorage.setItem(id, value);
+
+    });
+  });
+
+  $('#showPrice').on('click', function() {
+    $('input[type="radio"]').each(function() {
+      var id = $(this).attr('id');
+      var value = localStorage.getItem(id);
+
+      $(this).val(value);
+
+    });
+  });
+
+
 
   // console.log(document.getElementById("customize-form").innerHTML);
 
