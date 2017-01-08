@@ -225,6 +225,10 @@
 $(document).ready(function() {
 
 
+
+
+  restoreRadio();
+
   $('#addToCart').on('click', function() {
 
     console.log("added to cart");
@@ -286,6 +290,7 @@ $(document).ready(function() {
       p5 = $("input[name=decor]:checked").val().substring(1) * 1;
       total = p1 + p2 + p3 + p4 + p5;
       $("#output").val("£" + total);
+      saveRadio();
 
     } else {
       //alert('no')
