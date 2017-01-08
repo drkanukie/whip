@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <title>Whip | Choose your ride</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="js/functions.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/styles.css" />
+  <link rel="page icon" type="image/png" href="assets/favicon.png" />
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+</head>
+
+<body>
+  <header class="clearfix">
+    <a href="index.html" id="logo"></a>
+    <nav>
+      <a href="#" id="menu-icon"></a>
+      <ul>
+        <li><a href="index.html" class="current">Home</a></li>
+        <li><a href="choose.html">Choose</a></li>
+        <li><a href="decide.html">Decide</a></li>
+        <li><a href="stores.html">Stores</a></li>
+        <li><a href="sources.html">Sources</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section id="total" class="page-section">
+    <h2>Total:
+        <output type="number" name="price" id="output"></output>
+      </h2>
+  </section>
+  <footer>
+    <section class="footer-column page-section">
+      <article class="footer-content">
+        <h4>About Us</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco </p>
+      </article>
+      <article class="footer-content">
+        <h4>Contact</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco </p>
+      </article>
+      <article class="footer-content">
+        <h4>Follow Us</h4>
+        <ul class="social-links">
+          <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+          <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fa fa-envelope"></i></a></li>
+        </ul>
+      </article>
+    </section>
+    <article class="rights">&copy; Whip 2016</article>
+  </footer>
+  <!-- This is the end of the contact section -->
+</body>
+<script>
+$(document).ready(function() {
+  var basket = getTotal();
+  $("#output").val("£" + basket);
+  console.log(basket)
+});
+</script>
+
+</html>

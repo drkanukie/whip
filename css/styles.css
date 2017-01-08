@@ -1,4 +1,4 @@
-  /* @import url('https://fonts.googleapis.com/css?family=Dosis|Josefin+Sans|Lobster|Raleway'); */
+  @import url('https://fonts.googleapis.com/css?family=Dosis|Josefin+Sans|Lobster|Raleway');
   /* BASE SETUP --------------------------------------------------------------------------------*/
   /* element reset */
   
@@ -78,7 +78,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    border-bottom: 1px solid #448D7A;
+    border-bottom: 1px solid #CCC;
     z-index: 100;
   }
   
@@ -191,10 +191,6 @@
   /* Navigation */
   /* This is the end of the navigation section */
   
-  form {
-    background-color: #A2E7E0;
-  }
-  
   .customizer-header {
     width: 100 %;
     height: 400px;
@@ -237,7 +233,7 @@
   }
   
   .banner h3,
-  .automobile-picker h3 {
+  .product h3 {
     font-family: 'Lobster', cursive;
     font-size: 3.2rem;
     line-height: 155%;
@@ -278,9 +274,10 @@
     justify-content: center;
     padding: 0 0.8rem 0 0.8rem;
     margin: 0.8rem auto 7.2rem auto;
+    max-width: 112rem;
   }
   
-  .automobile-picker {
+  .product {
     width: 33.33%;
     min-height: 20rem;
     float: left;
@@ -294,17 +291,40 @@
     justify-content: flex-end;
   }
   
-  .automobile-picker#car {
+  .product {
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .product:hover {
+    opacity: 1;
+    transition: opacity .4s ease-in-out;
+    -moz-transition: opacity .4s ease-in-out;
+    -webkit-transition: opacity .4s ease-in-out;
+  }
+  
+  .pick-selected {
+    opacity: 1;
+  }
+  
+  .pick-unselected {
+    opacity: 0.5;
+  }
+  
+  .product#car {
     background-image: url("../assets/images/car1.jpg");
     margin-right: 0.8rem;
   }
   
-  .automobile-picker#bike {
+  .product#bike {
     background-image: url("../assets/images/bike1.jpg");
     margin-right: 0.8rem;
   }
   
-  .automobile-picker#boat {
+  .product#boat {
     background-image: url("../assets/images/boat1.jpg");
   }
   
@@ -370,25 +390,40 @@
   }
   /* PRODUCT CHOOSE */
   
-  #product {
+  #product,
+  #total {
     margin-top: 11.8rem;
   }
   
-  .carousel {
+  #carousel {
     background: #FAFAFA;
     min-height: 200px;
+    border: 1px solid #CCC;
+    margin-bottom: 7.2rem;
   }
   /* forms */
+  
+  .form-content {
+    padding: 0 3.2rem 0 3.2rem;
+  }
+  
+  input[type=radio] {
+    color: #448D7A;
+  }
   
   fieldset.radiogroup {
     border: none;
     padding: 0;
     margin-bottom: 7.2rem;
+    padding-bottom: 1.6rem;
+    border-bottom: 1px solid #ccc;
   }
   
   fieldset.radiogroup legend {
-    margin: 0;
+    color: #666;
+    margin: 0 0 1.6rem 0;
     padding: 0;
+    font-family: 'Lobster', cursive;
   }
   
   ul.radio {
@@ -400,20 +435,51 @@
   }
   
   ul.radio li {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 75%;
+    padding: 0.8rem;
   }
   
-  .radio {
-    margin-left: 1rem;
+  ul.radio span {
+    display: inline-block;
+  }
+  
+  ul.radio input[type=radio] {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+  
+  ul.radio li:active {
+    background: #CCC;
   }
   
   .swatch {
     display: inline-block;
-    width: 1.6rem;
-    height: 1.6rem;
+    width: 3.2rem;
+    height: 3.2rem;
     border-radius: 0.8rem;
     margin-left: 0.5rem;
     margin-right: 1.5rem;
+  }
+  
+  #total {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  #total h2 {
+    margin: 0;
+  }
+  
+  #total button {
+    border-radius: 0.8rem;
+    color: white;
+    background: #448D7A;
+    padding: 0.8rem 1.6rem;
+    font-size: 2.4rem;
+    border: 0;
   }
   
   .red {
@@ -540,8 +606,12 @@
   }
   
   hr {
-    width: 50%;
-    color: #CCC;
+    width: 20%;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1rem auto;
+    padding: 0;
   }
   
   .picture {
