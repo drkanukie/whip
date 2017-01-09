@@ -513,6 +513,11 @@
       opacity: 0.5;
     }
     
+    .warp {
+      position: absolute;
+      left: -9999rem;
+    }
+    
     .slick-center {
       opacity: 1;
     }

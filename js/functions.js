@@ -128,14 +128,12 @@ function restoreRadio() {
 function vehiclePickerInit() {
 
   console.log("vehiclePickerInit");
-  $("#car-carousel").css("display", "block");
-  $("#bike-carousel").css("display", "block");
-  $("#boat-carousel").css("display", "block");
+
 
   $('#car-picker').on('click', function() {
-    $("#car-carousel").css("display", "block");
-    $("#bike-carousel").css("display", "none");
-    $("#boat-carousel").css("display", "none");
+    $("#car-carousel").removeClass("warp");
+    $("#bike-carousel").addClass("warp");
+    $("#boat-carousel").addClass("warp");
 
 
     $('#bike-picker').removeClass("pick-selected");
@@ -143,9 +141,9 @@ function vehiclePickerInit() {
     $(this).addClass("pick-selected");
   });
   $('#bike-picker').on('click', function() {
-    $("#bike-carousel").css("display", "block");
-    $("#car-carousel").css("display", "none");
-    $("#boat-carousel").css("display", "none");
+    $("#bike-carousel").removeClass("warp");
+    $("#car-carousel").addClass("warp");
+    $("#boat-carousel").addClass("warp");
 
 
     $('#car-picker').removeClass("pick-selected");
@@ -153,9 +151,9 @@ function vehiclePickerInit() {
     $(this).addClass("pick-selected");
   });
   $('#boat-picker').on('click', function() {
-    $("#boat-carousel").css("display", "block");
-    $("#bike-carousel").css("display", "none");
-    $("#car-carousel").css("display", "none");
+    $("#boat-carousel").removeClass("warp");
+    $("#bike-carousel").addClass("warp");
+    $("#car-carousel").addClass("warp");
 
 
     $('#car-picker').removeClass("pick-selected");
