@@ -6,9 +6,12 @@
   <title>Whip | Choose your ride</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="js/functions.js"></script>
+  <script type="text/javascript" src="js/slick.min.js"></script>
   <link rel="stylesheet" type="text/css" href="css/styles.css" />
   <link rel="page icon" type="image/png" href="assets/favicon.png" />
   <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="css/slick.css" />
+  <link rel="stylesheet" type="text/css" href="css/slick-theme.css" />
 </head>
 
 <body>
@@ -26,7 +29,13 @@
       </ul>
     </nav>
   </header>
+  <section class="add-remove">
+    <div class="item">Hello what is up</div>
+    <button type="button" class="js-add-slide">
+      <button type="button" class="js-remove-slide">
+  </section>
   <section id="total" class="page-section">
+    <h3>Colour:  <output name="color" id="color"></output></h3>
     <h2>Total:
         <output type="number" name="price" id="output"></output>
       </h2>
@@ -59,7 +68,12 @@
 $(document).ready(function() {
   var basket = getTotal();
   $("#output").val("£" + basket);
+
+
   console.log(basket)
+  var color = getColor();
+  $("#color").val(color)
+  console.log(color)
 });
 </script>
 

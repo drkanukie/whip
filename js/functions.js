@@ -4,6 +4,7 @@
 var total = 0;
 var basket_key = "basket";
 var form_key = "form";
+var id = "color";
 
 
 
@@ -30,6 +31,21 @@ var form_key = "form";
       //  ]
 
     });
+    $('.add-remove').slick({
+      slidesToShow: 3,
+      slidesToScroll: 3
+    });
+    $('.js-add-slide').on('click', function() {
+      slideIndex++;
+      $('.add-remove').slick('slickAdd', '<div><h3>' + slideIndex + '</h3></div>');
+    });
+
+    $('.js-remove-slide').on('click', function() {
+      $('.add-remove').slick('slickRemove', slideIndex - 1);
+      if (slideIndex !== 0) {
+        slideIndex--;
+      }
+    });
 
   });
 })(document, window, jQuery);
@@ -42,6 +58,14 @@ function myFunction(p1, p2) {
 function getTotal() {
   if (typeof(Storage) !== "undefined") {
     return localStorage.getItem(basket_key);
+  } else {
+    return 0;
+  }
+}
+
+function getColor() {
+  if (typeof(Storage) !== "undefined") {
+    return localStorage.getItem(id);
   } else {
     return 0;
   }
@@ -100,4 +124,29 @@ function restoreRadio() {
       $(this).prop('checked', value);
     }
   });
+
+  function initMap() {
+    var lincoln = {
+      lat: 53.230737,
+      lng: -0.536323
+    };
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 7,
+      center: lincoln
+    });
+    var marker = new google.maps.Marker({
+      position: lincoln,
+      map: map
+    });
+    var cityCircle = new google.maps.Circle({
+      strokeColor: '#FF0000',
+      strokeOpacity: 0.8,
+      strokeWeight: 2,
+      fillColor: '#FF0000',
+      fillOpacity: 0.35,
+      map: map,
+      center: lincoln,
+      radius: 100000
+    });
+  }
 }

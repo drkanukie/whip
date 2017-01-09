@@ -272,6 +272,7 @@ $(document).ready(function() {
       var value = $(this).val();
       localStorage.setItem(id, value);
       localStorage.setItem(basket_key, total);
+      console.log($("input[type=radio]").prop("checked", true));
 
     });
   });

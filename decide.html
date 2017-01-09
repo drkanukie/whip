@@ -4,10 +4,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8" />
   <title>Whip | Choose your ride</title>
-  <!--<link rel="stylesheet" type="text/css" href="css/mystyles.css" /> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="js/functions.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/styles.css" />
   <link rel="page icon" type="image/png" href="assets/favicon.png" />
   <link href="css/font-awesome.min.css" rel="stylesheet" />
-  <style type="text/css">
+  <!-- <style type="text/css">
   .clearfix::after {
     content: "";
     display: block;
@@ -49,42 +51,8 @@
     padding: 5rem;
   }
   
-  #guarantee {
-    background-image: url("assets/images/guarantee.jpg");
-  }
-  
-  #satisfaction {
-    background-image: url("assets/images/satisfaction.jpg");
-  }
-  
-  #promotion {
-    background-image: url("assets/images/promotion.jpg");
-  }
-  
-  #map {
-    height: 40rem;
-    width: 80rem;
-  }
-  
-  .picture {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    width: 50%;
-    height: 25rem;
-  }
-  
-  #courier {
-    background-image: url("assets/images/courier.jpg");
-  }
-  
-  #inner-map {
-    display: block;
-    margin: auto;
-    width: 68%;
-    text-align: center;
-  }
-  </style>
+
+  </style> -->
 </head>
 
 <body>
@@ -143,45 +111,37 @@
   </section>
   <hr>
   <footer>
-    <ul class="social-links">
-      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-      <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-      <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
-    </ul>
+    <section class="footer-column page-section">
+      <article class="footer-content">
+        <h4>About Us</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco </p>
+      </article>
+      <article class="footer-content">
+        <h4>Contact</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco </p>
+      </article>
+      <article class="footer-content">
+        <h4>Follow Us</h4>
+        <ul class="social-links">
+          <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+          <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fa fa-envelope"></i></a></li>
+        </ul>
+      </article>
+    </section>
+    <article class="rights">&copy; Whip 2016</article>
   </footer>
 </body>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGUMbCFHnewltppHjmjv3eZMHYRnGHzng&callback=initMap">
 </script>
 <script>
-// AIzaSyCkUOdZ5y7hMm0yrcCQoCvLwzdM6M8s5qk 
+$(document).ready(function() {
+
+  initMap();
 
 
-
-function initMap() {
-  var lincoln = {
-    lat: 53.230737,
-    lng: -0.536323
-  };
-  var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 7,
-    center: lincoln
-  });
-  var marker = new google.maps.Marker({
-    position: lincoln,
-    map: map
-  });
-  var cityCircle = new google.maps.Circle({
-    strokeColor: '#FF0000',
-    strokeOpacity: 0.8,
-    strokeWeight: 2,
-    fillColor: '#FF0000',
-    fillOpacity: 0.35,
-    map: map,
-    center: lincoln,
-    radius: 100000
-  });
-}
+});
 </script>
 
 </html>
