@@ -26,6 +26,8 @@
         <li><a href="stores.html">Stores</a></li>
         <li><a href="sources.html">Sources</a></li>
         <li><a href="contact.html">Contact</a></li>
+        <li>
+          <a id="basket" href="basket.html"><i class="fa fa-shopping-basket" aria-hidden="true"></i></a></li>
       </ul>
     </nav>
   </header>
@@ -45,17 +47,32 @@
       <h3>Boat</h3>
     </a>
   </section>
+  <section id="model-info" class="page-section">
+    <h2>Models</h2>
+    <hr>
+    <p>Select your vehicle model below</p>
+  </section>
   <section class="carousel-container">
     <section class="page-section carousel">
-      <div class="item 1"><img src="assets/images/alfa_romeo_8c_2900b.jpg"></div>
-      <div class="item 2"><img src="assets/images/rolls_royce_phantom.jpg"></div>
-      <div class="item 3">Item 3</div>
-      <div class="item 4">Item 4</div>
+      <div class="item car1"><img src="assets/images/alfa_romeo_8c_2900b.jpg">
+        <h4>Alfa Romeo 8C 2900B</h4>
+        <h5>£89,000</h5></div>
+      </div>
+      <div class="item car2"><img src="assets/images/rolls_royce_phantom.jpg">
+        <h4>Rolls Royce Phantom</h4>
+        <h5>£100,000</h5></div>
+      <div class="item car3">Item 3</div>
+      <div class="item car4">Item 4</div>
     </section>
     <div class="controllers">
       <span class="prev"> < </span>
       <span class="next"> > </span>
     </div>
+  </section>
+  <section id="customize" class="page-section">
+    <h2>Customize</h2>
+    <hr>
+    <p>Customize your vehicle to your liking</p>
   </section>
   <form id="customize-form" class="form-content">
     <fieldset class="radiogroup page-section">
@@ -204,6 +221,7 @@
         <output type="number" name="price" id="output"></output>
       </h2>
       <button type='button' id="addToCart">Add To Cart</button>
+      <a id="basket" href="basket.html"><i class="fa fa-shopping-basket" aria-hidden="true"></i></a></li>
     </section>
   </form>
   <section class="page-section">
