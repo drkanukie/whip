@@ -29,12 +29,19 @@ function myFunction(p1, p2) {
 
 
 function getTotal() {
+  var total;
   if (typeof(Storage) !== "undefined") {
-    return localStorage.getItem(basket_key);
+    total = localStorage.getItem(basket_key);
+  } else {
+    return 0;
+  }
+  if (typeof total !== "undefined" && total !== null) {
+    return total
   } else {
     return 0;
   }
 }
+
 
 function getColor() {
   if (typeof(Storage) !== "undefined") {
@@ -44,25 +51,27 @@ function getColor() {
   }
 }
 
-function saveForm(form_id) {
+
+// save element HTML
+function saveElement(element_id, element_key) {
   if (typeof(Storage) !== "undefined") {
-    var form_html;
-    form_html = document.getElementById(form_id).innerHTML;
-    console.log("SAVED " + form_html);
-    return localStorage.setItem(form_key, form_html);
+    var element_html;
+    element_html = document.getElementById(element_id).innerHTML;
+    console.log("SAVED ELEMENT " + element_id);
+    return localStorage.setItem(element_key, element_html);
   } else {
     return 0;
   }
 }
 
-
-function restoreForm(form_id) {
+//restere element HTML
+function restoreElement(element_id, element_key) {
   if (typeof(Storage) !== "undefined") {
-    var form_html;
-    form_html = localStorage.getItem(form_key);
-    console.log("RESTORED " + form_html);
-    if (form_html) {
-      document.getElementById(form_id).innerHTML = form_html;
+    var element_html;
+    element_html = localStorage.getItem(element_key);
+    console.log("RESTORED ELEMENT " + element_id + element_html);
+    if (element_html) {
+      document.getElementById(element_id).innerHTML = element_html;
     }
   } else {
     return 0;
@@ -70,20 +79,21 @@ function restoreForm(form_id) {
 }
 
 function saveRadio() {
-  localStorage.clear();
-
   $('input[type="radio"]').each(function() {
-
+    // get radio id and checked state
+    var id = $(this).attr('id');
 
     if ($(this).is(':checked')) {
+      // save if radio is checked
 
-      var id = $(this).attr('id');
       var value = $(this).prop('checked', true);
       console.log("SAVING " + id + " " + value);
       localStorage.setItem(id, value);
+    } else {
+      // clear the local store if unchecked
+      console.log("REMOVING " + id);
+      localStorage.removeItem(id);
     }
-
-
   });
 }
 
@@ -128,6 +138,7 @@ function restoreRadio() {
 function vehiclePickerInit() {
 
   console.log("vehiclePickerInit");
+  saveElement("input-elements", "newform");
 
 
   $('#car-picker').on('click', function() {
@@ -135,10 +146,13 @@ function vehiclePickerInit() {
     $("#bike-carousel").addClass("warp");
     $("#boat-carousel").addClass("warp");
 
-
     $('#bike-picker').removeClass("pick-selected");
     $('#boat-picker').removeClass("pick-selected");
     $(this).addClass("pick-selected");
+    restoreElement("input-elements", "newform");
+    calcTotal();
+    localStorage.clear();
+
   });
   $('#bike-picker').on('click', function() {
     $("#bike-carousel").removeClass("warp");
@@ -149,6 +163,9 @@ function vehiclePickerInit() {
     $('#car-picker').removeClass("pick-selected");
     $('#boat-picker').removeClass("pick-selected");
     $(this).addClass("pick-selected");
+    restoreElement("input-elements", "newform");
+    calcTotal();
+    localStorage.clear();
   });
   $('#boat-picker').on('click', function() {
     $("#boat-carousel").removeClass("warp");
@@ -159,12 +176,42 @@ function vehiclePickerInit() {
     $('#car-picker').removeClass("pick-selected");
     $('#bike-picker').removeClass("pick-selected");
     $(this).addClass("pick-selected");
+    restoreElement("input-elements", "newform");
+    calcTotal();
+    localStorage.clear();
   });
 
 
 }
 
+function calcTotal() {
+  if ($("input[name=color]:checked").val()) {
+    p1 = $("input[name=color]:checked").val().substring(1) * 1;
+    p2 = $("input[name=engine]:checked").val().substring(1) * 1;
+    p3 = $("input[name=rims]:checked").val().substring(1) * 1;
+    p4 = $("input[name=tyres]:checked").val().substring(1) * 1;
+    p5 = $("input[name=decor]:checked").val().substring(1) * 1;
+    total = p1 + p2 + p3 + p4 + p5;
+    $("#output").val("£" + total);
+  }
+}
+
 
 function basketContent() {
-  console.log("basket loaded");
+  console.log("basketContent");
+  restoreElement("input-elements", "formdata");
+
+  $('input[type="radio"]').each(function() {
+    // get radio id and checked state
+    var id = $(this).attr('id');
+    var value = localStorage.getItem(id);
+    if (value) {
+      // set it visible & checked
+      $(this).prop('checked', value);
+    } else {
+      // hide its parent <li> 
+
+      $(this).parent().css('display', 'none');
+    }
+  });
 }

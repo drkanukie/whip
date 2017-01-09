@@ -29,13 +29,14 @@
       </ul>
     </nav>
   </header>
-  <section id="basket-content">
-  </section>
+  <form id="basket-content" class="page-section">
+    <h1>Summary</h1>
+    <div id="input-elements"></div>
+  </form>
   <section id="total" class="page-section">
-    <h3>Colour:  <output name="color" id="color"></output></h3>
     <h2>Total:
         <output type="number" name="price" id="output"></output>
-      </h2>
+    </h2>
   </section>
   <footer>
     <section class="footer-column page-section">
@@ -66,10 +67,8 @@ $(document).ready(function() {
 
   basketContent();
 
-
   var basket = getTotal();
   $("#output").val("£" + basket);
-
 
   console.log(basket)
   var color = getColor();
