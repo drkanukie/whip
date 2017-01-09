@@ -1,12 +1,38 @@
 // Whip web functions
 //
-
 // GLOBALS
 var total = 0;
 var basket_key = "basket";
 var form_key = "form";
 
 
+
+(function(document, window, $) {
+  $(document).ready(function() {
+    $('.carousel').slick({
+      centerMode: true,
+      centerPadding: '60px',
+      dots: true,
+      infinite: true,
+      slidesToShow: 3,
+      prevArrow: '.carousel-container .prev',
+      nextArrow: '.carousel-container .next',
+
+      // responsive[
+      //  breakpoint: 480, settings {
+      //    centerMode: true,
+      //    prevArrow: '.carousel-container .prev',
+      //   nextArrow: '.carousel-container .next',
+      //    slidesToShow: 1,
+      //    dots: true,
+      //    infinite: true,
+      //   }
+      //  ]
+
+    });
+
+  });
+})(document, window, jQuery);
 // FUNCTIONS
 function myFunction(p1, p2) {
   return p1 * p2; // The function returns the product of p1 and p2

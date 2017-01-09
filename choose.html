@@ -5,8 +5,11 @@
   <meta charset="utf-8" />
   <title>Whip | Choose your ride</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/slick.min.js"></script>
   <script src="js/functions.js"></script>
   <link rel="stylesheet" type="text/css" href="css/styles.css" />
+  <link rel="stylesheet" type="text/css" href="css/slick.css" />
+  <link rel="stylesheet" type="text/css" href="css/slick-theme.css" />
   <link rel="page icon" type="image/png" href="assets/favicon.png" />
   <link href="css/font-awesome.min.css" rel="stylesheet" />
 </head>
@@ -42,9 +45,19 @@
       <h3>Boat</h3>
     </a>
   </section>
-  <form id="customize-form" class="form-content">
-    <section id="carousel" class="page-section">
+  <section class="carousel-container">
+    <section class="page-section carousel">
+      <div class="item 1"><img src="assets/images/alfa_romeo_8c_2900b.jpg"></div>
+      <div class="item 2"><img src="assets/images/rolls_royce_phantom.jpg"></div>
+      <div class="item 3">Item 3</div>
+      <div class="item 4">Item 4</div>
     </section>
+    <div class="controllers">
+      <span class="prev"> < </span>
+      <span class="next"> > </span>
+    </div>
+  </section>
+  <form id="customize-form" class="form-content">
     <fieldset class="radiogroup page-section">
       <legend>Colour</legend>
       <ul class="radio">
@@ -223,6 +236,9 @@
 </body>
 <script type="text/javascript">
 $(document).ready(function() {
+
+
+
 
 
 

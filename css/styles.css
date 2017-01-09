@@ -395,11 +395,36 @@
     margin-top: 11.8rem;
   }
   
-  #carousel {
-    background: #FAFAFA;
-    min-height: 200px;
-    border: 1px solid #CCC;
+  .carousel {
+    background: white;
+    width: 100%;
+    height: 100%;
     margin-bottom: 7.2rem;
+  }
+  
+  .carousel .item {
+    left: -50%;
+    position: flex;
+    max-width: 50%;
+    text-align: center;
+    background-color: #ccc;
+    margin: auto;
+  }
+  
+  .controllers {
+    text-align: center;
+  }
+  
+  .controllers span {
+    width: 5rem;
+    height: 5rem;
+    display: inline-block;
+    font-size: 35px;
+    background-color: #D6D6D6;
+    cursor: pointer;
+    color: white;
+    border-radius: 7rem;
+    text-align: center;
   }
   /* forms */
   
