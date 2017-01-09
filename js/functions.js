@@ -6,50 +6,23 @@ var basket_key = "basket";
 var form_key = "form";
 var id = "color";
 
-
-
-(function(document, window, $) {
-  $(document).ready(function() {
-    $('.carousel').slick({
-      centerMode: true,
-      centerPadding: '60px',
-      dots: true,
-      infinite: true,
-      slidesToShow: 3,
-      prevArrow: '.carousel-container .prev',
-      nextArrow: '.carousel-container .next',
-
-      // responsive[
-      //  breakpoint: 480, settings {
-      //    centerMode: true,
-      //    prevArrow: '.carousel-container .prev',
-      //   nextArrow: '.carousel-container .next',
-      //    slidesToShow: 1,
-      //    dots: true,
-      //    infinite: true,
-      //   }
-      //  ]
-
-    });
-    $('.add-remove').slick({
-      slidesToShow: 3,
-      slidesToScroll: 3
-    });
-    $('.js-add-slide').on('click', function() {
-      slideIndex++;
-      $('.add-remove').slick('slickAdd', '<div><h3>' + slideIndex + '</h3></div>');
-    });
-
-    $('.js-remove-slide').on('click', function() {
-      $('.add-remove').slick('slickRemove', slideIndex - 1);
-      if (slideIndex !== 0) {
-        slideIndex--;
-      }
-    });
-
-  });
-})(document, window, jQuery);
 // FUNCTIONS
+
+
+function carouselInit() {
+
+  console.log("carouselInit");
+  $('.carousel').slick({
+    centerMode: true,
+    centerPadding: '60px',
+    infinite: true,
+    slidesToShow: 3,
+    arrows: true,
+  });
+}
+
+
+
 function myFunction(p1, p2) {
   return p1 * p2; // The function returns the product of p1 and p2
 }
@@ -149,4 +122,51 @@ function restoreRadio() {
       radius: 100000
     });
   }
+
+}
+
+function vehiclePickerInit() {
+
+  console.log("vehiclePickerInit");
+  $("#car-carousel").css("display", "block");
+  $("#bike-carousel").css("display", "block");
+  $("#boat-carousel").css("display", "block");
+
+  $('#car-picker').on('click', function() {
+    $("#car-carousel").css("display", "block");
+    $("#bike-carousel").css("display", "none");
+    $("#boat-carousel").css("display", "none");
+
+
+    $('#bike-picker').removeClass("pick-selected");
+    $('#boat-picker').removeClass("pick-selected");
+    $(this).addClass("pick-selected");
+  });
+  $('#bike-picker').on('click', function() {
+    $("#bike-carousel").css("display", "block");
+    $("#car-carousel").css("display", "none");
+    $("#boat-carousel").css("display", "none");
+
+
+    $('#car-picker').removeClass("pick-selected");
+    $('#boat-picker').removeClass("pick-selected");
+    $(this).addClass("pick-selected");
+  });
+  $('#boat-picker').on('click', function() {
+    $("#boat-carousel").css("display", "block");
+    $("#bike-carousel").css("display", "none");
+    $("#car-carousel").css("display", "none");
+
+
+    $('#car-picker').removeClass("pick-selected");
+    $('#bike-picker').removeClass("pick-selected");
+    $(this).addClass("pick-selected");
+  });
+
+
+}
+
+
+function basketContent() {
+  console.log("basket loaded");
 }

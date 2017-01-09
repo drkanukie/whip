@@ -29,10 +29,7 @@
       </ul>
     </nav>
   </header>
-  <section class="add-remove">
-    <div class="item">Hello what is up</div>
-    <button type="button" class="js-add-slide">
-      <button type="button" class="js-remove-slide">
+  <section id="basket-content">
   </section>
   <section id="total" class="page-section">
     <h3>Colour:  <output name="color" id="color"></output></h3>
@@ -66,6 +63,10 @@
 </body>
 <script>
 $(document).ready(function() {
+
+  basketContent();
+
+
   var basket = getTotal();
   $("#output").val("£" + basket);
 
