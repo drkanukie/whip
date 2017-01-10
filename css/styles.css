@@ -221,7 +221,6 @@
     
     .banner {
       margin-top: 11rem;
-      margin-bottom: 11rem;
       width: 100%;
       min-height: 60rem;
       background-color: #EBEBEB;
@@ -444,37 +443,28 @@
     }
     
     .page-section h1 {
+      margin-top: 10rem;
       text-align: center;
     }
     
-    #decide article {
-      margin: 0 auto 7.2rem auto;
-      text-align: justify;
-      text-justify: inter-word;
-    }
-    
-    #decide p {
-      font-size: 100%;
-    }
-    
-    #decide h1 {
-      clear: both;
-      margin-top: 20rem;
-    }
-    
-    #decide {}
-    
-    #decide .third {
+    .pullquote {
       width: 33.3%;
       display: flex;
       flex-wrap: wrap;
-      flex-direction: row;
+      flex-direction: column;
       align-items: center;
       justify-content: space-around;
+      margin: 3.2rem auto 0 auto;
     }
     
-    .third h4,
-    h5 {
+    .pullquote h3 {
+      font-style: italic;
+      margin: 1.6rem 0 1.6rem 0;
+    }
+    
+    .pullquote h4,
+    .pullquote h5 {
+      margin: 0;
       opacity: 0.5;
     }
     /* SOURCES */
@@ -525,7 +515,7 @@
     }
     
     .sources {
-      margin-top: 10rem;
+      /*margin-top: 10rem;*/
       margin-bottom: 5rem;
       display: flex;
       flex-direction: row;
@@ -533,7 +523,7 @@
     }
     
     .sources h2,
-    h1 {
+    .sources h1 {
       margin-top: 20rem;
       margin: auto;
       text-align: center;
@@ -847,7 +837,7 @@
       height: 1px;
       border: 0;
       border-top: 1px solid #ccc;
-      margin: 1rem auto;
+      margin: 1rem auto 4.8rem auto;
       padding: 0;
     }
     
@@ -860,23 +850,32 @@
       color: #6ABD9B;
     }
     
-    .italics {
-      font-style: italic;
-    }
-    
     #sources {
       text-align: center;
     }
     
     .big-parallax {
-      margin: 0;
+      position: relative;
+      opacity: 0.65;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+      min-height: 40rem;
+      margin: 10rem 0 0 0;
+    }
+    
+    .dashboard {
       background-image: url("../assets/images/bigscreen1.jpg");
-      /* position: fixed; */
-      width: 100%;
-      height: 50rem;
-      background-size: 100%;
-      background-position: 50% 210px !important;
-      height: 600px;
+    }
+    
+    .engine {
+      background-image: url("../assets/images/engine.jpg");
+    }
+    
+    .boat {
+      background-image: url("../assets/images/boating.jpg");
     }
     
     .picture {
