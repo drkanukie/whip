@@ -7,9 +7,9 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script type="text/javascript" src="js/slick.min.js"></script>
   <script src="js/functions.js"></script>
-  <link rel="stylesheet" type="text/css" href="css/styles.css" />
   <link rel="stylesheet" type="text/css" href="css/slick.css" />
   <link rel="stylesheet" type="text/css" href="css/slick-theme.css" />
+  <link rel="stylesheet" type="text/css" href="css/styles.css" />
   <link rel="page icon" type="image/png" href="assets/favicon.png" />
   <link href="css/font-awesome.min.css" rel="stylesheet" />
 </head>
@@ -37,13 +37,13 @@
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
   </section>
   <section class="product-selector">
-    <a href="#" id="car" class="product pick-selected">
+    <a href="#" id="car-picker" class="product pick-selected">
       <h3>Car</h3>
     </a>
-    <a href="#" id="bike" class="product pick-unselected">
+    <a href="#" id="bike-picker" class="product">
       <h3>Bike</h3>
     </a>
-    <a href="#" id="boat" class="product pick-unselected">
+    <a href="#" id="boat-picker" class="product">
       <h3>Boat</h3>
     </a>
   </section>
@@ -52,21 +52,58 @@
     <hr>
     <p>Select your vehicle model below</p>
   </section>
-  <section class="carousel-container">
-    <section class="page-section carousel">
-      <div class="item car1"><img src="assets/images/alfa_romeo_8c_2900b.jpg">
-        <h4>Alfa Romeo 8C 2900B</h4>
-        <h5>£89,000</h5></div>
-      </div>
-      <div class="item car2"><img src="assets/images/rolls_royce_phantom.jpg">
-        <h4>Rolls Royce Phantom</h4>
-        <h5>£100,000</h5></div>
-      <div class="item car3">Item 3</div>
-      <div class="item car4">Item 4</div>
-    </section>
-    <div class="controllers">
-      <span class="prev"> < </span>
-      <span class="next"> > </span>
+  <section id="car-carousel" class="page-section carousel">
+    <div class="item car1"><img src="assets/images/alfa_romeo_8c_2900b.jpg">
+      <h4>Alfa Romeo 8C 2900B</h4>
+      <h4>£89,000</h4></div>
+    <h4>Car</h4>
+    </div>
+    <div class="item car2"><img src="assets/images/rolls_royce_phantom.jpg">
+      <h4>Rolls Royce Phantom</h4>
+      <h4>£100,000</h4></div>
+    <div class="item car3"><img src="assets/images/alfa_romeo_8c_2900b.jpg">
+      <h4>Alfa Romeo 8C 2900B</h4>
+      <h4>£89,000</h4></div>
+    </div>
+    <div class="item car4"><img src="assets/images/rolls_royce_phantom.jpg">
+      <h4>Rolls Royce Phantom</h4>
+      <h4>£100,000</h4></div>
+    </div>
+  </section>
+  <section id="bike-carousel" class="page-section carousel warp">
+    <div class="item car1"><img src="assets/images/alfa_romeo_8c_2900b.jpg">
+      <h4>Alfa Romeo 8C 2900B</h4>
+      <h4>£89,000</h4></div>
+    <h4>bike</h4>
+    </div>
+    <div class="item car2"><img src="assets/images/rolls_royce_phantom.jpg">
+      <h4>Rolls Royce Phantom</h4>
+      <h4>£100,000</h4></div>
+    <div class="item car3"><img src="assets/images/alfa_romeo_8c_2900b.jpg">
+      <h4>Alfa Romeo 8C 2900B</h4>
+      <h4>£89,000</h4></div>
+    </div>
+    <div class="item car4"><img src="assets/images/rolls_royce_phantom.jpg">
+      <h4>Rolls Royce Phantom</h4>
+      <h4>£100,000</h4></div>
+    </div>
+  </section>
+  <section id="boat-carousel" class="page-section carousel warp">
+    <div class="item car1"><img src="assets/images/alfa_romeo_8c_2900b.jpg">
+      <h4>Alfa Romeo 8C 2900B</h4>
+      <h4>£89,000</h4></div>
+    <h4>Boat</h4>
+    </div>
+    <div class="item car2"><img src="assets/images/rolls_royce_phantom.jpg">
+      <h4>Rolls Royce Phantom</h4>
+      <h4>£100,000</h4></div>
+    <div class="item car3"><img src="assets/images/alfa_romeo_8c_2900b.jpg">
+      <h4>Alfa Romeo 8C 2900B</h4>
+      <h4>£89,000</h4></div>
+    </div>
+    <div class="item car4"><img src="assets/images/rolls_royce_phantom.jpg">
+      <h4>Rolls Royce Phantom</h4>
+      <h4>£100,000</h4></div>
     </div>
   </section>
   <section id="customize" class="page-section">
@@ -75,160 +112,156 @@
     <p>Customize your vehicle to your liking</p>
   </section>
   <form id="customize-form" class="form-content">
-    <fieldset class="radiogroup page-section">
-      <legend>Colour</legend>
-      <ul class="radio">
-        <li>
-          <input type="radio" name="color" id="color1" value="£100" checked />
-          <label for="color1">Red (£100)<span class="red swatch"></span></label>
-        </li>
-        <li>
-          <input type="radio" name="color" id="color2" value="£100" />
-          <label for="color2">Green (£100)<span class="green swatch"></span></label>
-        </li>
-        <li>
-          <input type="radio" name="color" id="color3" value="£100" />
-          <label for="color3">Blue (£100)<span class="blue swatch"></span></label>
-        </li>
-        <li>
-          <input type="radio" name="color" id="color4" value="£100" />
-          <label for="color4">Yellow (£100)<span class="yellow swatch"></span></label>
-        </li>
-        <li>
-          <input type="radio" name="color" id="color5" value="£100" />
-          <label for="color5">White (£100)<span class="white swatch"></span></label>
-        </li>
-        <li>
-          <input type="radio" name="color" id="color6" value="£300" />
-          <label for="color6">Starburst (£300)<span class="starburst swatch"></span></label>
-        </li>
-        <li>
-          <input type="radio" name="color" id="color7" value="£800" />
-          <label for="color7">Mahogany (£800)<span class="mahogany swatch"></span></label>
-        </li>
-        <li>
-          <input type="radio" name="color" id="color8" value="£600" />
-          <label for="color8">Oak (£600)<span class="oak swatch"></span></label>
-        </li>
-        <li>
-          <input type="radio" name="color" id="color9" value="£450" />
-          <label for="color9">Beech (£450)<span class="beech swatch"></span></label>
-        </li>
-      </ul>
-    </fieldset>
-    <fieldset class="radiogroup page-section">
-      <legend>Engine</legend>
-      <ul class="radio">
-        <li>
-          <input type="radio" name="engine" id="engine1" value="£4000" checked />
-          <label for="engine1">V4 250hp (£4,000)<span class="v4 swatch"></span></label>
-        </li>
-        <li>
-          <input type="radio" name="engine" id="engine2" value="£12000" />
-          <label for="engine2">V6 375hp (£12,000)<span class="v6 swatch"></span></label>
-        </li>
-        <li>
-          <input type="radio" name="engine" id="engine3" value="£32000" />
-          <label for="engine3">V8 525hp (£32,000)<span class="v8 swatch"></span></label>
-        </li>
-        <li>
-          <input type="radio" name="engine" id="engine4" value="£75000" />
-          <label for="engine4">V10 650hp (£75,000)<span class="v10 swatch"></span></label>
-        </li>
-        <li>
-          <input type="radio" name="engine" id="engine5" value="£250000" />
-          <label for="engine5">V12 780hp (£250,000)<span class="v12 swatch"></span></label>
-        </li>
-        <li>
-          <input type="radio" name="engine" id="engine6" value="£750000" />
-          <label for="engine6">V12+ 1000hp (£750,000)<span class="v12plus swatch"></span></label>
-        </li>
-      </ul>
-    </fieldset>
-    <fieldset class="radiogroup page-section">
-      <legend>Rims</legend>
-      <ul class="radio">
-        <li>
-          <input type="radio" name="rims" id="rims1" value="£1000" checked />
-          <label for="rims1">Silver Alloy (£1,000)<span class="silver-alloy swatch"></span></label>
-        </li>
-        <li>
-          <input type="radio" name="rims" id="rims2" value="£1500" />
-          <label for="rims2">Copper Alloy (£1,500)<span class="copper-alloy swatch"></span></label>
-        </li>
-        <li>
-          <input type="radio" name="rims" id="rims3" value="£4500" />
-          <label for="rims3">Magnesium Alloy (£4,500)<span class="magnesium-alloy swatch"></span></label>
-        </li>
-        <li>
-          <input type="radio" name="rims" id="rims4" value="£10750" />
-          <label for="rims4">Titanium Alloy (£10,750)<span class="titanium-alloy swatch"></span></label>
-        </li>
-      </ul>
-    </fieldset>
-    <fieldset class="radiogroup page-section">
-      <legend>Tyres</legend>
-      <ul class="radio">
-        <li>
-          <input type="radio" name="tyres" id="tyres1" value="£200" checked />
-          <label for="tyres1">Traction (£200)<span class="traction swatch"></span></label>
-        </li>
-        <li>
-          <input type="radio" name="tyres" id="tyres2" value="£300" />
-          <label for="tyres2">Winter (£300)<span class="winter swatch"></span></label>
-        </li>
-        <li>
-          <input type="radio" name="tyres" id="tyres3" value="£450" />
-          <label for="tyres3">Urban (£450)<span class="urban swatch"></span></label>
-        </li>
-        <li>
-          <input type="radio" name="tyres" id="tyres4" value="£550" />
-          <label for="tyres4">Sport (£550)<span class="sport swatch"></span></label>
-        </li>
-        <li>
-          <input type="radio" name="tyres" id="tyres5" value="£1000" />
-          <label for="tyres5">Racing (£1,000)<span class="racing swatch"></span></label>
-        </li>
-      </ul>
-    </fieldset>
-    <fieldset class="radiogroup page-section">
-      <legend>Decor</legend>
-      <ul class="radio">
-        <li>
-          <input type="radio" name="decor" id="decor1" value="£2000" checked />
-          <label for="decor1">Leather (£2,000)<span class="leather swatch"></span></label>
-        </li>
-        <li>
-          <input type="radio" name="decor" id="decor2" value="£3000" />
-          <label for="decor2">Red leather (£3,000)<span class="red-leather swatch"></span></label>
-        </li>
-        <li>
-          <input type="radio" name="decor" id="decor3" value="£3500" />
-          <label for="decor3">White leather (£3,500)<span class="white-leather swatch"></span></label>
-        </li>
-        <li>
-          <input type="radio" name="decor" id="decor4" value="£8750" />
-          <label for="decor4">Diamond stiched vinyl (£8,750)<span class="diamond-vinyl swatch"></span></label>
-        </li>
-        <li>
-          <input type="radio" name="decor" id="decor5" value="£12000" />
-          <label for="decor5">Grey cross stiched vinyl (£12,000)<span class="grey-vinyl swatch"></span></label>
-        </li>
-      </ul>
-    </fieldset>
+    <div id="input-elements">
+      <fieldset class="radiogroup page-section">
+        <legend>Colour</legend>
+        <ul class="radio">
+          <li>
+            <input type="radio" name="color" id="color1" value="£100" checked />
+            <label for="color1">Red (£100)<span class="red swatch"></span></label>
+          </li>
+          <li>
+            <input type="radio" name="color" id="color2" value="£100" />
+            <label for="color2">Green (£100)<span class="green swatch"></span></label>
+          </li>
+          <li>
+            <input type="radio" name="color" id="color3" value="£100" />
+            <label for="color3">Blue (£100)<span class="blue swatch"></span></label>
+          </li>
+          <li>
+            <input type="radio" name="color" id="color4" value="£100" />
+            <label for="color4">Yellow (£100)<span class="yellow swatch"></span></label>
+          </li>
+          <li>
+            <input type="radio" name="color" id="color5" value="£100" />
+            <label for="color5">White (£100)<span class="white swatch"></span></label>
+          </li>
+          <li>
+            <input type="radio" name="color" id="color6" value="£300" />
+            <label for="color6">Starburst (£300)<span class="starburst swatch"></span></label>
+          </li>
+          <li>
+            <input type="radio" name="color" id="color7" value="£800" />
+            <label for="color7">Mahogany (£800)<span class="mahogany swatch"></span></label>
+          </li>
+          <li>
+            <input type="radio" name="color" id="color8" value="£600" />
+            <label for="color8">Oak (£600)<span class="oak swatch"></span></label>
+          </li>
+          <li>
+            <input type="radio" name="color" id="color9" value="£450" />
+            <label for="color9">Beech (£450)<span class="beech swatch"></span></label>
+          </li>
+        </ul>
+      </fieldset>
+      <fieldset class="radiogroup page-section">
+        <legend>Engine</legend>
+        <ul class="radio">
+          <li>
+            <input type="radio" name="engine" id="engine1" value="£4000" checked />
+            <label for="engine1">V4 250hp (£4,000)<span class="v4 swatch"></span></label>
+          </li>
+          <li>
+            <input type="radio" name="engine" id="engine2" value="£12000" />
+            <label for="engine2">V6 375hp (£12,000)<span class="v6 swatch"></span></label>
+          </li>
+          <li>
+            <input type="radio" name="engine" id="engine3" value="£32000" />
+            <label for="engine3">V8 525hp (£32,000)<span class="v8 swatch"></span></label>
+          </li>
+          <li>
+            <input type="radio" name="engine" id="engine4" value="£75000" />
+            <label for="engine4">V10 650hp (£75,000)<span class="v10 swatch"></span></label>
+          </li>
+          <li>
+            <input type="radio" name="engine" id="engine5" value="£250000" />
+            <label for="engine5">V12 780hp (£250,000)<span class="v12 swatch"></span></label>
+          </li>
+          <li>
+            <input type="radio" name="engine" id="engine6" value="£750000" />
+            <label for="engine6">V12+ 1000hp (£750,000)<span class="v12plus swatch"></span></label>
+          </li>
+        </ul>
+      </fieldset>
+      <fieldset class="radiogroup page-section">
+        <legend>Rims</legend>
+        <ul class="radio">
+          <li>
+            <input type="radio" name="rims" id="rims1" value="£1000" checked />
+            <label for="rims1">Silver Alloy (£1,000)<span class="silver-alloy swatch"></span></label>
+          </li>
+          <li>
+            <input type="radio" name="rims" id="rims2" value="£1500" />
+            <label for="rims2">Copper Alloy (£1,500)<span class="copper-alloy swatch"></span></label>
+          </li>
+          <li>
+            <input type="radio" name="rims" id="rims3" value="£4500" />
+            <label for="rims3">Magnesium Alloy (£4,500)<span class="magnesium-alloy swatch"></span></label>
+          </li>
+          <li>
+            <input type="radio" name="rims" id="rims4" value="£10750" />
+            <label for="rims4">Titanium Alloy (£10,750)<span class="titanium-alloy swatch"></span></label>
+          </li>
+        </ul>
+      </fieldset>
+      <fieldset class="radiogroup page-section">
+        <legend>Tyres</legend>
+        <ul class="radio">
+          <li>
+            <input type="radio" name="tyres" id="tyres1" value="£200" checked />
+            <label for="tyres1">Traction (£200)<span class="traction swatch"></span></label>
+          </li>
+          <li>
+            <input type="radio" name="tyres" id="tyres2" value="£300" />
+            <label for="tyres2">Winter (£300)<span class="winter swatch"></span></label>
+          </li>
+          <li>
+            <input type="radio" name="tyres" id="tyres3" value="£450" />
+            <label for="tyres3">Urban (£450)<span class="urban swatch"></span></label>
+          </li>
+          <li>
+            <input type="radio" name="tyres" id="tyres4" value="£550" />
+            <label for="tyres4">Sport (£550)<span class="sport swatch"></span></label>
+          </li>
+          <li>
+            <input type="radio" name="tyres" id="tyres5" value="£1000" />
+            <label for="tyres5">Racing (£1,000)<span class="racing swatch"></span></label>
+          </li>
+        </ul>
+      </fieldset>
+      <fieldset class="radiogroup page-section">
+        <legend>Decor</legend>
+        <ul class="radio">
+          <li>
+            <input type="radio" name="decor" id="decor1" value="£2000" checked />
+            <label for="decor1">Leather (£2,000)<span class="leather swatch"></span></label>
+          </li>
+          <li>
+            <input type="radio" name="decor" id="decor2" value="£3000" />
+            <label for="decor2">Red leather (£3,000)<span class="red-leather swatch"></span></label>
+          </li>
+          <li>
+            <input type="radio" name="decor" id="decor3" value="£3500" />
+            <label for="decor3">White leather (£3,500)<span class="white-leather swatch"></span></label>
+          </li>
+          <li>
+            <input type="radio" name="decor" id="decor4" value="£8750" />
+            <label for="decor4">Diamond stiched vinyl (£8,750)<span class="diamond-vinyl swatch"></span></label>
+          </li>
+          <li>
+            <input type="radio" name="decor" id="decor5" value="£12000" />
+            <label for="decor5">Grey cross stiched vinyl (£12,000)<span class="grey-vinyl swatch"></span></label>
+          </li>
+        </ul>
+      </fieldset>
+    </div>
     <section id="total" class="page-section">
       <h2>Total:
         <output type="number" name="price" id="output"></output>
       </h2>
       <button type='button' id="addToCart">Add To Cart</button>
-      <a id="basket" href="basket.html"><i class="fa fa-shopping-basket" aria-hidden="true"></i></a></li>
     </section>
   </form>
-  <section class="page-section">
-    <h2>Summary</h2>
-    <h3>Model</h3>
-    <h3>Price</h3>
-  </section>
   <footer>
     <section class="footer-column page-section">
       <article class="footer-content">
@@ -255,54 +288,30 @@
 <script type="text/javascript">
 $(document).ready(function() {
 
-
-
-
-
-
-
+  // RESET HERE
+  //localStorage.clear();
+  // activate carousel params
+  carouselInit();
+  // events on picker
+  vehiclePickerInit();
+  // restore form state
   restoreRadio();
 
   $('#addToCart').on('click', function() {
 
     console.log("added to cart");
+    saveElement("input-elements", "formdata");
+    saveRadio();
+    localStorage.setItem(basket_key, total);
 
-    $('input[type="radio"]').each(function() {
-      var id = $(this).attr('id');
-      var value = $(this).val();
-      localStorage.setItem(id, value);
-      localStorage.setItem(basket_key, total);
-      console.log($("input[type=radio]").prop("checked", true));
+    //$('input[type="radio"]').each(function() {
+    //var id = $(this).attr('id');
+    //var value = $(this).val();
+    //localStorage.setItem(id, value);
 
-    });
+    //console.log($("input[type=radio]").prop("checked", true));
+    //});
   });
-
-  $('#showPrice').on('click', function() {
-    $('input[type="radio"]').each(function() {
-      var id = $(this).attr('id');
-      var value = localStorage.getItem(id);
-
-      $(this).val(value);
-
-    });
-  });
-
-
-
-  // console.log(document.getElementById("customize-form").innerHTML);
-
-  // if (typeof(Storage) !=="undefined") {
-  // Store
-  //   formdata = localStorage.getItem("formdata");
-  //    if (formdata) {
-  //     document.getElementById("customize-form").innerHTML = formdata;
-  //   }
-  //   console.log(formdata);
-  //Retrieve
-
-  //  } else {
-  //   console.log("Sorry, your browser does not support Web Storage...");
-  // }
 
   total = 0;
   $("input[type=radio]").each(function(index) {
@@ -311,27 +320,11 @@ $(document).ready(function() {
       total = total + $(this).val().substring(1) * 1;
       $("#output").val("£" + total);
     }
-  })
+  });
   $("input[type=radio]").change(function() {
-
-    localStorage.setItem("formdata", document.getElementById("customize-form").innerHTML);
-    //console.log(document.getElementById("customize-form").innerHTML);
-
-    if ($("input[name=color]:checked").val()) {
-      p1 = $("input[name=color]:checked").val().substring(1) * 1;
-      p2 = $("input[name=engine]:checked").val().substring(1) * 1;
-      p3 = $("input[name=rims]:checked").val().substring(1) * 1;
-      p4 = $("input[name=tyres]:checked").val().substring(1) * 1;
-      p5 = $("input[name=decor]:checked").val().substring(1) * 1;
-      total = p1 + p2 + p3 + p4 + p5;
-      $("#output").val("£" + total);
-      saveRadio();
-
-    } else {
-      //alert('no')
-    }
-    // alert($(this).val());
-  })
+    calcTotal();
+    saveRadio();
+  });
 });
 </script>
 
