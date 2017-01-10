@@ -6,6 +6,10 @@ var basket_key = "basket";
 var form_key = "form";
 var id = "color";
 
+var car = 0;
+var bike = 0;
+var boat = 0;
+
 // FUNCTIONS
 
 
@@ -108,7 +112,10 @@ function restoreRadio() {
     }
   });
 
+
   function initMap() {
+
+    console.log("map loaded");
     var lincoln = {
       lat: 53.230737,
       lng: -0.536323
@@ -133,85 +140,177 @@ function restoreRadio() {
     });
   }
 
-}
-
-function vehiclePickerInit() {
-
-  console.log("vehiclePickerInit");
-  saveElement("input-elements", "newform");
-
-
-  $('#car-picker').on('click', function() {
-    $("#car-carousel").removeClass("warp");
-    $("#bike-carousel").addClass("warp");
-    $("#boat-carousel").addClass("warp");
-
-    $('#bike-picker').removeClass("pick-selected");
-    $('#boat-picker').removeClass("pick-selected");
-    $(this).addClass("pick-selected");
-    restoreElement("input-elements", "newform");
-    calcTotal();
-    localStorage.clear();
-
-  });
-  $('#bike-picker').on('click', function() {
-    $("#bike-carousel").removeClass("warp");
-    $("#car-carousel").addClass("warp");
-    $("#boat-carousel").addClass("warp");
-
-
-    $('#car-picker').removeClass("pick-selected");
-    $('#boat-picker').removeClass("pick-selected");
-    $(this).addClass("pick-selected");
-    restoreElement("input-elements", "newform");
-    calcTotal();
-    localStorage.clear();
-  });
-  $('#boat-picker').on('click', function() {
-    $("#boat-carousel").removeClass("warp");
-    $("#bike-carousel").addClass("warp");
-    $("#car-carousel").addClass("warp");
-
-
-    $('#car-picker').removeClass("pick-selected");
-    $('#bike-picker').removeClass("pick-selected");
-    $(this).addClass("pick-selected");
-    restoreElement("input-elements", "newform");
-    calcTotal();
-    localStorage.clear();
-  });
-
-
-}
-
-function calcTotal() {
-  if ($("input[name=color]:checked").val()) {
-    p1 = $("input[name=color]:checked").val().substring(1) * 1;
-    p2 = $("input[name=engine]:checked").val().substring(1) * 1;
-    p3 = $("input[name=rims]:checked").val().substring(1) * 1;
-    p4 = $("input[name=tyres]:checked").val().substring(1) * 1;
-    p5 = $("input[name=decor]:checked").val().substring(1) * 1;
-    total = p1 + p2 + p3 + p4 + p5;
-    $("#output").val("£" + total);
+  function sayHello() {
+    console.log("Hello");
   }
-}
 
 
-function basketContent() {
-  console.log("basketContent");
-  restoreElement("input-elements", "formdata");
 
-  $('input[type="radio"]').each(function() {
-    // get radio id and checked state
-    var id = $(this).attr('id');
-    var value = localStorage.getItem(id);
-    if (value) {
-      // set it visible & checked
-      $(this).prop('checked', value);
+
+
+
+  function goToChoose() {
+
+    car = 0;
+    bike = 0;
+    boat = 0;
+
+    console.log("click to go to choose");
+    $('#car-picker').on('click', function() {
+      console.log("car is true")
+      car = 1;
+      bike = 0;
+      boat = 0;
+      return 0;
+    });
+    $('#bike-picker').on('click', function() {
+      car = 0;
+      bike = 1;
+      boat = 0;
+      return 0;
+    });
+    $('#boat-picker').on('click', function() {
+      car = 0;
+      bike = 0;
+      boat = 1;
+      return 0;
+    });
+
+  }
+
+  function vehiclePickerInit() {
+
+    console.log("vehiclePickerInit");
+    saveElement("input-elements", "newform");
+
+    car = 0;
+    bike = 0;
+    boat = 0;
+
+    if (car == 1) {
+      console.log("car is true");
+      $("#car-carousel").removeClass("warp");
+      $("#bike-carousel").addClass("warp");
+      $("#boat-carousel").addClass("warp");
+
+      $('#bike-picker').removeClass("pick-selected");
+      $('#boat-picker').removeClass("pick-selected");
+      $('#car-picker').addClass("pick-selected");
+      restoreElement("input-elements", "newform");
+      calcTotal();
+      return 0;
     } else {
-      // hide its parent <li> 
-
-      $(this).parent().css('display', 'none');
+      return 0;
     }
-  });
+    if (bike == 1) {
+      console.log("bike is true");
+      $("#bike-carousel").removeClass("warp");
+      $("#car-carousel").addClass("warp");
+      $("#boat-carousel").addClass("warp");
+
+
+      $('#car-picker').removeClass("pick-selected");
+      $('#boat-picker').removeClass("pick-selected");
+      $('#bike-picker').addClass("pick-selected");
+      restoreElement("input-elements", "newform");
+      calcTotal();
+      return 0;
+    } else {
+      return 0;
+    }
+    if (boat == 1) {
+      console.log("boat is true");
+      $("#boat-carousel").removeClass("warp");
+      $("#bike-carousel").addClass("warp");
+      $("#car-carousel").addClass("warp");
+
+
+      $('#car-picker').removeClass("pick-selected");
+      $('#bike-picker').removeClass("pick-selected");
+      $('#boat-picker').addClass("pick-selected");
+      restoreElement("input-elements", "newform");
+      calcTotal();
+      return 0;
+    } else {
+      return 0;
+    }
+
+
+    $('#car-picker').on('click', function() {
+      $("#car-carousel").removeClass("warp");
+      $("#bike-carousel").addClass("warp");
+      $("#boat-carousel").addClass("warp");
+
+      $('#bike-picker').removeClass("pick-selected");
+      $('#boat-picker').removeClass("pick-selected");
+      $(this).addClass("pick-selected");
+      restoreElement("input-elements", "newform");
+      calcTotal();
+      localStorage.clear();
+
+    });
+    $('#bike-picker').on('click', function() {
+      $("#bike-carousel").removeClass("warp");
+      $("#car-carousel").addClass("warp");
+      $("#boat-carousel").addClass("warp");
+
+
+      $('#car-picker').removeClass("pick-selected");
+      $('#boat-picker').removeClass("pick-selected");
+      $(this).addClass("pick-selected");
+      restoreElement("input-elements", "newform");
+      calcTotal();
+      localStorage.clear();
+    });
+    $('#boat-picker').on('click', function() {
+      $("#boat-carousel").removeClass("warp");
+      $("#bike-carousel").addClass("warp");
+      $("#car-carousel").addClass("warp");
+
+
+      $('#car-picker').removeClass("pick-selected");
+      $('#bike-picker').removeClass("pick-selected");
+      $(this).addClass("pick-selected");
+      restoreElement("input-elements", "newform");
+      calcTotal();
+      localStorage.clear();
+    });
+
+
+
+
+
+  }
+
+  function calcTotal() {
+    if ($("input[name=color]:checked").val()) {
+      p1 = $("input[name=color]:checked").val().substring(1) * 1;
+      p2 = $("input[name=engine]:checked").val().substring(1) * 1;
+      p3 = $("input[name=rims]:checked").val().substring(1) * 1;
+      p4 = $("input[name=tyres]:checked").val().substring(1) * 1;
+      p5 = $("input[name=decor]:checked").val().substring(1) * 1;
+      total = p1 + p2 + p3 + p4 + p5;
+      $("#output").val("£" + total);
+    }
+  }
+
+
+  function basketContent() {
+    console.log("basketContent");
+    restoreElement("input-elements", "formdata");
+
+    $('input[type="radio"]').each(function() {
+      // get radio id and checked state
+      var id = $(this).attr('id');
+      var value = localStorage.getItem(id);
+      if (value) {
+        // set it visible & checked
+        $(this).prop('checked', value);
+      } else {
+        // hide its parent <li> 
+
+        $(this).parent().css('display', 'none');
+      }
+    });
+  }
 }

@@ -221,8 +221,9 @@
     
     .banner {
       margin-top: 11rem;
+      margin-bottom: 11rem;
       width: 100%;
-      min-height: 40rem;
+      min-height: 60rem;
       background-color: #EBEBEB;
       background-size: cover;
       background-repeat: no-repeat;
@@ -234,11 +235,27 @@
       justify-content: flex-end;
     }
     
+    .top-padding {
+      margin-top: 11rem;
+    }
+    
+    #banner-text {
+      position: flex;
+      text-align: center;
+      top: 50%;
+      margin: auto;
+    }
+    
+    .banner a {
+      color: white;
+      text-decoration: none;
+    }
+    
     .banner h3,
     .product h3 {
       font-family: 'Lobster', cursive;
       font-size: 3.2rem;
-      line-height: 155%;
+      line-height: 145%;
       margin: 0 0 0.8rem 0;
       text-align: center;
       text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
@@ -431,15 +448,86 @@
     }
     
     #decide article {
-      border-bottom: 1px solid #CCC;
       margin: 0 auto 7.2rem auto;
+      text-align: justify;
+      text-justify: inter-word;
+    }
+    
+    #decide p {
+      font-size: 100%;
+    }
+    
+    #decide h1 {
+      clear: both;
+      margin-top: 20rem;
+    }
+    
+    #decide {}
+    
+    #decide .third {
+      width: 33.3%;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+    }
+    
+    .third h4,
+    h5 {
+      opacity: 0.5;
     }
     /* SOURCES */
     
+    .testamonial-left {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      margin-top: 25rem;
+      margin-bottom: 30rem;
+    }
+    
+    iframe {
+      height: 100%;
+      width: 100%;
+    }
+    
+    .video {
+      max-width: 112rem;
+      margin: auto;
+      width: 20rem;
+      height: 30rem;
+    }
+    
+    #account-header h1 {
+      margin-top: 10rem;
+      text-align: center;
+    }
+    
+    .padding-article {
+      padding: 2rem;
+      width: 50%;
+    }
+    
+    .rightFloat {
+      text-align: right;
+    }
+    
     .sources {
+      margin-top: 10rem;
+      margin-bottom: 5rem;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+    }
+    
+    .sources h2,
+    h1 {
+      margin-top: 20rem;
+      margin: auto;
+      text-align: center;
     }
     
     .sources article {
@@ -450,6 +538,11 @@
     #product,
     #basket-content {
       margin-top: 11.8rem;
+    }
+    
+    .footer-content h5 {
+      margin: 8px;
+      text-align: center;
     }
     
     .carousel {
@@ -749,12 +842,22 @@
       padding: 0;
     }
     
+    .lefty {
+      margin: 0;
+    }
+    
+    .source-article a {
+      text-decoration: none;
+      color: #131313;
+    }
+    
     .picture {
+      margin: 0 3rem 0 3rem;
       background-size: cover;
       background-repeat: no-repeat;
       background-position: 50% 50%;
       width: 50%;
-      height: 25rem;
+      height: 50rem;
     }
     
     .image-align {

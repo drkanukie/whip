@@ -2,17 +2,16 @@
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta charset="utf-8" />
   <title>Whip | Choose your ride</title>
-  <!-- <link rel="stylesheet" type="text/css" href="css/mystyles.css" /> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/slick.min.js"></script>
+  <script src="js/functions.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/styles.css" />
   <link rel="page icon" type="image/png" href="assets/favicon.png" />
   <link href="css/font-awesome.min.css" rel="stylesheet" />
-  <script>
-  function resizeIframe(obj) {
-    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
-  }
-  </script>
-  <style type="text/css">
+  <!-- <style type="text/css">
   .width-limit {
     margin: auto;
     width: 75%;
@@ -28,7 +27,6 @@
   }
   
   .video {
-    float: left;
     max-width: 112rem;
     margin: auto;
     display: flex;
@@ -55,7 +53,7 @@
   .padding-article {
     margin: 2rem;
   }
-  </style>
+  </style> -->
 </head>
 
 <body>
@@ -75,24 +73,26 @@
       </nav>
     </div>
   </header>
-  <section class=" testamonial-left">
+  <section class="testamonial-left">
     <article class="picture " id="video">
-      <iframe onload="resizeIframe(this)" src="https://www.youtube.com/embed/UlnibxsxcmY" frameborder="0" scrolling="no" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/UlnibxsxcmY" frameborder="0" scrolling="no" allowfullscreen></iframe>
     </article>
     <article class="padding-article">
       <h2>Demo</h2>
-      <hr>
-      <p>This is some text about the demo video.</p>
+      <hr class="lefty">
+      <p>Here is the YouTube video showing the website working on different browsers</p>
     </article>
   </section>
-  <section id="sources" class="width-limit">
+  <section id="sources" class="page-section">
     <h2>Sources</h2>
-    <hr>
-    <div id="filler"></div>
+    <hr class="lefty">
+    <article class="source-article">
+      <h4><a href="https://thenounproject.com/" target="_blank">Free for non commercal use icons</a></h4>
+    </article>
   </section>
-  <section id="links" class="width-limit">
+  <section id="links" class="page-section">
     <h2>Links</h2>
-    <hr>
+    <hr class="lefty">
     <div id="filler"></div>
   </section>
   <footer>

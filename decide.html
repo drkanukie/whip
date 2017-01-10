@@ -2,9 +2,11 @@
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta charset="utf-8" />
   <title>Whip | Choose your ride</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/slick.min.js"></script>
   <script src="js/functions.js"></script>
   <link rel="stylesheet" type="text/css" href="css/styles.css" />
   <link rel="page icon" type="image/png" href="assets/favicon.png" />
@@ -15,15 +17,7 @@
     display: block;
     clear: both;
   }
-  
-  .testamonial-left {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: center;
-  }
-  
+
   .wrapper-left {
     float: left;
     width: 100%;
@@ -72,7 +66,7 @@
       </nav>
     </div>
   </header>
-  <section class=" testamonial-left">
+  <section class=" testamonial-left top-padding">
     <article class="picture " id="courier">
     </article>
     <article class="padding-article">
@@ -80,8 +74,8 @@
       <p>Our package come equipt with anti-static and rattle technology. This means while your vehicle is in transit it won't get damaged and will arrive in imaculate condition.</p>
     </article>
   </section>
-  <section class="testamonial-left">
-    <article class="padding-article">
+  <section class="testamonial-left ">
+    <article class="padding-article rightFloat">
       <h2>Guarantee</h2>
       <p>We guarantee that your vehicle will arrive within 10 working days, delivered within the time span sent to your mobile device via text.</p>
     </article>
@@ -97,7 +91,7 @@
     </article>
   </section>
   <section class="testamonial-left">
-    <article class="padding-article">
+    <article class="padding-article rightFloat">
       <h2>Promotion</h2>
       <p>If your vehicle is worth over £25,000 then we will deliver it within 7 working days free of charge. Your designated driver will also speak with you to arrange a time that fits you for the delivery.</p>
     </article>
@@ -134,14 +128,10 @@
   </footer>
 </body>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGUMbCFHnewltppHjmjv3eZMHYRnGHzng&callback=initMap">
-</script>
-<script>
 $(document).ready(function() {
-
   initMap();
-
-
-});
+  sayHello();
+})
 </script>
 
 </html>

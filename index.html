@@ -6,6 +6,8 @@
   <meta charset="utf-8" />
   <title>Whip | Choose your ride</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/slick.min.js"></script>
+  <script src="js/functions.js"></script>
   <link rel="stylesheet" type="text/css" href="css/styles.css" />
   <link rel="page icon" type="image/png" href="assets/favicon.png" />
   <link href="css/font-awesome.min.css" rel="stylesheet" />
@@ -29,65 +31,133 @@
   <!-- end of the header section/ navigation is here -->
   <!-- This is the start of the banner section -->
   <section class="banner">
-    <h3>Browse our selection of classic vintage vehicles</h3>
-    <h4>Customize them to your liking.</h4>
-    <button>Customizer</button>
+    <article id="banner-text">
+      <h3>Browse our selection of classic vintage vehicles</h3>
+      <h4>Customize them to your liking.</h4>
+      <button type="button"><a href="choose.html">Customizer</a></button>
+    </article>
   </section>
   <!-- This is the end of the banner section -->
   <!-- This is the start of the choose section -->
   <section class="product-selector">
-    <article id="car-picker" class="product">
+    <a href="choose.html" id="car-picker" class="product">
       <h3>Car</h3>
-    </article>
-    <article id="bike-picker" class="product">
+    </a>
+    <a href="choose.html" id="bike-picker" class="product">
       <h3>Bike</h3>
-    </article>
-    <article id="boat-picker" class="product">
+    </a>
+    <a href="choose.html" id="boat-picker" class="product">
       <h3>Boat</h3>
-    </article>
+    </a>
+  </section>
   </section>
   <!-- This is the end of the choose section -->
   <!-- This is the start of the decide section -->
   <section id="decide" class="page-section">
     <article id="decide-commute">
-      <h1>Commuting</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <h1>Our Vehicles</h1>
+      <hr>
+      <p>If you buy a vehicle from us, you know that you will only be getting quality. Each vehicle spends a minimum of 2 weeks in diagnostics before we ship it out to ensure that you will only be getting the best possible experience from us.</p>
+      <p>Our prices range from low to high, with everything inbetween. You can change all the aspects about your ride so that your vehicle will be truly unique to you.</p>
+      <article class="third">
+        <h2></h2>
+        <h3>"They are great value for money"</h3>
+        <br>
+        <h4>John McMillan</h4>
+        <h5>Cornwall</h5>
+      </article>
+      <article class="third">
+        <h2></h2>
+        <h3>"It is the fastest boat I own"</h3>
+        <br>
+        <h4>Katherine Jenkins</h4>
+        <h5>Pembrokeshire</h5>
+      </article>
+      <article class="third">
+        <h2></h2>
+        <h3>"The car has flawless interior"</h3>
+        <br>
+        <h4>Jeremy Sparkson</h4>
+        <h5>Low Gear Magazine</h5>
+      </article>
     </article>
     <article id="decide-location">
-      <h1>Location</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <h1>Reputation</h1>
+      <hr>
+      <p>Being established in 2016 has meant we have had plenty of time to get our formula right. From the factory to the customer, your vehicle is in great hands with the team here at Whip.</p>
+      <p>Last year only 2% of all vehicles shipped out said that they had an issue, and on average that issue was sorted with a short phone call. When you buy from Whip, you know that you can buy with confidence.</p>
+      <article class="third">
+        <h2></h2>
+        <h3>"6 months with no problems"</h3>
+        <br>
+        <h4>James Hay</h4>
+        <h5>London</h5>
+      </article>
+      <article class="third">
+        <h2></h2>
+        <h3>"Whips reputation is undesputed"</h3>
+        <br>
+        <h4>Tim Bones</h4>
+        <h5>6th Gear Magazine</h5>
+      </article>
+      <article class="third">
+        <h2></h2>
+        <h3>"I want to buy from them again"</h3>
+        <br>
+        <h4>Steven Nielsburg</h4>
+        <h5>A Car Odyssey</h5>
+      </article>
     </article>
     <aside id="decide-location">
     </aside>
     <article id="decide-economy">
-      <h1>Economy</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <h1>Customer service</h1>
+      <hr>
+      <p>Here at Whip we strive to provide the best. Thats why our call centres are open 24/7 to answer all of your questions. If you are worried about buying from us, give us a call and we will be glad to help you.</p>
+      <p>Need advice on our wide range of vintage cars? Call one of our team and they will be happy to assist you. Want to know our policies? Nothing is hidden, call us up and they will be laid out infront of you.</p>
+      <article class="third">
+        <h2></h2>
+        <h3>"I got an answer at 4am"</h3>
+        <br>
+        <h4>Richard Hammock</h4>
+        <h5>Canterbury</h5>
+      </article>
+      <article class="third">
+        <h2></h2>
+        <h3>"They anwered all my questions"</h3>
+        <br>
+        <h4>Darren Rent</h4>
+        <h5>Riverside Football</h5>
+      </article>
+      <article class="third">
+        <h2></h2>
+        <h3>"They told me all their policies"</h3>
+        <br>
+        <h4>Mark Truckernurg</h4>
+        <h5>Headbook.com</h5>
+      </article>
     </article>
   </section>
   <!-- This is the end of the decide section -->
   <!-- This is the start of the stores section -->
-  <section id="stores">
-    <section class="inner-wrapper">
-      <section class="store-display">
-      </section>
-      <aside class="store-display" id="map">
-      </aside>
-    </section>
-  </section>
   <!-- This is the end of the stores section -->
   <!-- This is the start of the sources section -->
+  <section id="account-header">
+    <h1>Customer Accounts</h1>
+    <hr>
+  </section>
   <section class="sources page-section">
     <article id="sources-video">
-      <h2>Video</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <h2>Joseph Chequers</h2>
+      <p>I have owned a Whip Car for over 4 months now and I am loving it. I opted for the V8 engine on their new Alfa Romeo 8C and it performs amazingly. Its fuel economy isn't great, but thats what you would expect from one of these beasts. I have done around 6,000 miles since owning it, going on road trips and exploring the country's road and I have to say, it has really made me enjoy them more. I have recommended Whip to my other car enthusist friends, and I recommend that you try out Whip too, they are something really special.</p>
     </article>
     <article id="sources-written">
-      <h2>Written</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <h2>Greg's Boat Yard</h2>
+      <p>We have purchased around 7 vintage boats from Whip now and our customers love them. We rent them out to locals and they keep comingback from more. From their reliability to the way they look, these boats strike class in my boat yard and I couldn't be happier. They run smoothly and their engines are built to perfection (as I also build boat engines) and I don't think I could do a better job myself. Really good work from the team over at Whip.</p>
     </article>
     <article id="sources-links">
-      <h2>Links</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <h2>Lincoln University</h2>
+      <p>Since Whip is local to Lincoln, we reached out to them for our engineering department to see if they could provide us with some of their custom engines. Oh wow... these engines are the real deal, they are so effecient but pack an almighty punch. Our students have had a real blast taking the engines apart and checking out how you get your fuel injector to work as such a high rpm, truly fascinating. Thank you Whip for these excellent engines, they will be put to good use in the year to come.</p>
     </article>
   </section>
   <!-- This is the end of the sources section -->
@@ -96,11 +166,13 @@
     <section class="footer-column page-section">
       <article class="footer-content">
         <h4>About Us</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco </p>
+        <p>Whip is a Lincoln, United Kingdom based company that specialises in high end vintage vehicles. We provide 24/7 customer service or you can pop into our shop (located on the decide page) and pay us a visit. </p>
       </article>
       <article class="footer-content">
         <h4>Contact</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco </p>
+        <h5>Number:     0800 783 345</h5>
+        <h5>Past 9pm:   0800 263 263</h5>
+        <h5>Email:      support@whip.com</h5>
       </article>
       <article class="footer-content">
         <h4>Follow Us</h4>
@@ -116,5 +188,14 @@
   </footer>
   <!-- This is the end of the contact section -->
 </body>
+<script type="text/javascript">
+$(document).ready(function() {
+
+
+  goToChoose();
+
+
+})
+</script>
 
 </html>
