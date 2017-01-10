@@ -5,9 +5,7 @@ var total = 0;
 var basket_key = "basket";
 var form_key = "form";
 var id = "color";
-var car = 0;
-var bike = 0;
-var boat = 0;
+
 
 
 // FUNCTIONS
@@ -73,7 +71,7 @@ function restoreElement(element_id, element_key) {
   if (typeof(Storage) !== "undefined") {
     var element_html;
     element_html = localStorage.getItem(element_key);
-    console.log("RESTORED ELEMENT " + element_id + element_html);
+    //console.log("RESTORED ELEMENT " + element_id + element_html);
     if (element_html) {
       document.getElementById(element_id).innerHTML = element_html;
     }
@@ -147,130 +145,99 @@ function sayHello() {
 
 
 
-function goToChoose() {
-
-  car = 0;
-  bike = 0;
-  boat = 0;
-
-  console.log("click to go to choose");
+function savePicker() {
+  console.log("savePicker");
   $('#car-picker').on('click', function() {
-    console.log("car is true")
-    car = 1;
-    bike = 0;
-    boat = 0;
-    return 0;
+    console.log("picker = #car-picker");
+    localStorage.setItem("picker", "#car-picker");
+    localStorage.setItem("picker-reset", true);
+    console.log("*** RESET ARMED***");
   });
   $('#bike-picker').on('click', function() {
-    car = 0;
-    bike = 1;
-    boat = 0;
-    return 0;
+    console.log("picker = #bike-picker");
+    localStorage.setItem("picker", "#bike-picker");
+    localStorage.setItem("picker-reset", true);
+    console.log("*** RESET ARMED***");
   });
   $('#boat-picker').on('click', function() {
-    car = 0;
-    bike = 0;
-    boat = 1;
-    return 0;
+    console.log("picker = #boat-picker");
+    localStorage.setItem("picker", "#boat-picker");
+    localStorage.setItem("picker-reset", true);
+    console.log("*** RESET ARMED***");
   });
 
 }
 
+function resetRadioEvents() {
+  // RADIO CHANGE
+  $("input[type=radio]").change(function() {
+    calcTotal();
+    saveRadio();
+  });
+}
+
+
+function resetPicker(picker_on, picker1, picker2, carousel_on, carousel1, carousel2) {
+  console.log("resetPicker");
+  $(carousel_on).removeClass("warp");
+  $(picker_on).addClass("pick-selected");
+
+  $(carousel1).addClass("warp");
+  $(picker1).removeClass("pick-selected");
+
+  $(carousel2).addClass("warp");
+  $(picker2).removeClass("pick-selected");
+
+  restoreElement("input-elements", "newform");
+  resetRadioEvents();
+  calcTotal();
+  var reset = localStorage.getItem("picker-reset");
+  console.log("reset = " + reset)
+  if (reset) {
+    localStorage.clear();
+    localStorage.removeItem("picker-reset");
+  }
+}
 
 function vehiclePickerInit() {
 
   console.log("vehiclePickerInit");
   saveElement("input-elements", "newform");
+  var picker = localStorage.getItem("picker")
 
-  /*
-    if (car = 1) {
-      console.log("car is true");
-      $("#car-carousel").removeClass("warp");
-      $("#bike-carousel").addClass("warp");
-      $("#boat-carousel").addClass("warp");
+  if (picker == "#car-picker") {
+    console.log("picker = #car-picker");
+    resetPicker("#car-picker", "#bike-picker", "#boat-picker", "#car-carousel", "#bike-carousel", "#boat-carousel");
+  }
+  if (picker == "#bike-picker") {
+    console.log("picker = #bike-picker");
+    resetPicker("#bike-picker", "#car-picker", "#boat-picker", "#bike-carousel", "#car-carousel", "#boat-carousel");
+  }
+  if (picker == "#boat-picker") {
+    console.log("picker = #boat-picker");
+    resetPicker("#boat-picker", "#bike-picker", "#car-picker", "#boat-carousel", "#car-carousel", "#bike-carousel");
+  }
 
-      $('#bike-picker').removeClass("pick-selected");
-      $('#boat-picker').removeClass("pick-selected");
-      $('#car-picker').addClass("pick-selected");
-      restoreElement("input-elements", "newform");
-      calcTotal();
-      return 0;
-    } else {
-      return 0;
-    }
-    if (bike = 1) {
-      console.log("bike is true");
-      $("#bike-carousel").removeClass("warp");
-      $("#car-carousel").addClass("warp");
-      $("#boat-carousel").addClass("warp");
-
-
-      $('#car-picker').removeClass("pick-selected");
-      $('#boat-picker').removeClass("pick-selected");
-      $('#bike-picker').addClass("pick-selected");
-      restoreElement("input-elements", "newform");
-      calcTotal();
-      return 0;
-    } else {
-      return 0;
-    }
-    if (boat = 1) {
-      console.log("boat is true");
-      $("#boat-carousel").removeClass("warp");
-      $("#bike-carousel").addClass("warp");
-      $("#car-carousel").addClass("warp");
-
-
-      $('#car-picker').removeClass("pick-selected");
-      $('#bike-picker').removeClass("pick-selected");
-      $('#boat-picker').addClass("pick-selected");
-      restoreElement("input-elements", "newform");
-      calcTotal();
-      return 0;
-    } else {
-      return 0;
-    }
-
-    */
 
   $('#car-picker').on('click', function() {
-    $("#car-carousel").removeClass("warp");
-    $("#bike-carousel").addClass("warp");
-    $("#boat-carousel").addClass("warp");
-
-    $('#bike-picker').removeClass("pick-selected");
-    $('#boat-picker').removeClass("pick-selected");
-    $(this).addClass("pick-selected");
-    restoreElement("input-elements", "newform");
-    calcTotal();
+    resetPicker("#car-picker", "#bike-picker", "#boat-picker", "#car-carousel", "#bike-carousel", "#boat-carousel");
+    console.log("CLEARED");
     localStorage.clear();
-
+    localStorage.setItem("picker", "#car-picker");
   });
+
   $('#bike-picker').on('click', function() {
-    $("#bike-carousel").removeClass("warp");
-    $("#car-carousel").addClass("warp");
-    $("#boat-carousel").addClass("warp");
-
-
-    $('#car-picker').removeClass("pick-selected");
-    $('#boat-picker').removeClass("pick-selected");
-    $(this).addClass("pick-selected");
-    restoreElement("input-elements", "newform");
-    calcTotal();
+    resetPicker("#bike-picker", "#car-picker", "#boat-picker", "#bike-carousel", "#car-carousel", "#boat-carousel");
+    console.log("CLEARED");
     localStorage.clear();
+    localStorage.setItem("picker", "#bike-picker");
   });
+
   $('#boat-picker').on('click', function() {
-    $("#boat-carousel").removeClass("warp");
-    $("#bike-carousel").addClass("warp");
-    $("#car-carousel").addClass("warp");
-
-
-    $('#car-picker').removeClass("pick-selected");
-    $('#bike-picker').removeClass("pick-selected");
-    $(this).addClass("pick-selected");
-    restoreElement("input-elements", "newform");
-    calcTotal();
+    resetPicker("#boat-picker", "#bike-picker", "#car-picker", "#boat-carousel", "#car-carousel", "#bike-carousel");
+    console.log("CLEARED");
     localStorage.clear();
+    localStorage.setItem("picker", "#boat-picker");
   });
 }
 

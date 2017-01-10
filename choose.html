@@ -302,22 +302,16 @@ $(document).ready(function() {
   // restore form state
   restoreRadio();
 
-  $('#addToCart').on('click', function() {
 
+  // CART BUTTON
+  $('#addToCart').on('click', function() {
     console.log("added to cart");
     saveElement("input-elements", "formdata");
     saveRadio();
     localStorage.setItem(basket_key, total);
-
-    //$('input[type="radio"]').each(function() {
-    //var id = $(this).attr('id');
-    //var value = $(this).val();
-    //localStorage.setItem(id, value);
-
-    //console.log($("input[type=radio]").prop("checked", true));
-    //});
   });
 
+  // INIT TOTAL
   total = 0;
   $("input[type=radio]").each(function(index) {
     if ($(this).is(':checked')) {
@@ -326,6 +320,8 @@ $(document).ready(function() {
       $("#output").val("£" + total);
     }
   });
+
+  // RADIO CHANGE
   $("input[type=radio]").change(function() {
     calcTotal();
     saveRadio();
