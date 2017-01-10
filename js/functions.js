@@ -233,7 +233,6 @@ function vehiclePickerInit() {
 
     */
 
-
   $('#car-picker').on('click', function() {
     $("#car-carousel").removeClass("warp");
     $("#bike-carousel").addClass("warp");
