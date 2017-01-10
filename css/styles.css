@@ -489,6 +489,15 @@
       margin-bottom: 30rem;
     }
     
+    .testamonial-right {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      margin-top: 25rem;
+    }
+    
     iframe {
       height: 100%;
       width: 100%;
@@ -848,7 +857,26 @@
     
     .source-article a {
       text-decoration: none;
-      color: #131313;
+      color: #6ABD9B;
+    }
+    
+    .italics {
+      font-style: italic;
+    }
+    
+    #sources {
+      text-align: center;
+    }
+    
+    .big-parallax {
+      margin: 0;
+      background-image: url("../assets/images/bigscreen1.jpg");
+      /* position: fixed; */
+      width: 100%;
+      height: 50rem;
+      background-size: 100%;
+      background-position: 50% 210px !important;
+      height: 600px;
     }
     
     .picture {
