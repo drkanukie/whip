@@ -177,6 +177,7 @@ function resetRadioEvents() {
 }
 
 
+
 function resetPicker(picker_on, picker1, picker2, carousel_on, carousel1, carousel2) {
   console.log("resetPicker");
   $(carousel_on).removeClass("warp");
