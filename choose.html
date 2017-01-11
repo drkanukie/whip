@@ -33,7 +33,7 @@
   <section id="product" class="page-section">
     <h1>Choose your vehicle</h1>
     <hr>
-    <p>Pick from our selection of vintage Cars, Bikes and Boats below</p>
+    <p id="model-info">Pick from our selection of vintage Cars, Bikes and Boats below</p>
   </section>
   <section class="product-selector">
     <a href="#" id="car-picker" class="product pick-selected">
@@ -52,62 +52,74 @@
     <p>Select your vehicle model below</p>
   </section>
   <section id="car-carousel" class="page-section carousel">
-    <div id="car0" class="item" value="£89000">
-      <img src="assets/images/alfa_romeo_8c_2900b.jpg">
-      <h4>Alfa Romeo 8C 2900B</h4>
-      <h4>£89,000</h4>
+    <!-- Cars -->
+    <div id="car0" class="item" value="£74000"><img src="assets/images/wartburg.jpg">
+      <h4>Wartburg 311 Coupe</h4>
+      <h4>£74,000</h4>
     </div>
-    <div id="car1" class="item" value="£34000"><img src="assets/images/rolls_royce_phantom.jpg">
-      <h4>Rolls Royce Phantom</h4>
-      <h4>£100,000</h4>
+    <div id="car1" class="item" value="£34000"><img src="assets/images/bmw_3.jpg">
+      <h4>BMW 3C</h4>
+      <h4>£34,000</h4>
     </div>
-    <div id="car2" class="item" value="£88000"><img src="assets/images/alfa_romeo_8c_2900b.jpg">
-      <h4>Alfa Romeo 8C 2900B</h4>
-      <h4>£89,000</h4>
+    <div id="car2" class="item" value="£250000"><img src="assets/images/rockhocket.jpg">
+      <h4>Rockhocket class 6</h4>
+      <h4>£250,000</h4>
     </div>
-    <div id="car3" class="item" value="£66000"><img src="assets/images/rolls_royce_phantom.jpg">
-      <h4>Rolls Royce Phantom</h4>
-      <h4>£100,000</h4>
+    <div id="car3" class="item" value="£54000"><img src="assets/images/ford_galaxy.jpg">
+      <h4>1964 Ford Galaxy Sunstar</h4>
+      <h4>£54,000</h4>
     </div>
-    <div id="car4" class="item" value="£65000"><img src="assets/images/rolls_royce_phantom.jpg">
-      <h4>Rolls Royce Phantom</h4>
-      <h4>£100,000</h4>
+    <div id="car4" class="item" value="£28000"><img src="assets/images/beatle.jpg">
+      <h4>1976 VW Beatle</h4>
+      <h4>£28,000</h4>
+    </div>
+    <div id="car5" class="item" value="£450000"><img src="assets/images/whip_special.jpg">
+      <h4>Whip custom 8 series</h4>
+      <h4>£450,000</h4>
     </div>
   </section>
   <section id="bike-carousel" class="page-section carousel warp">
-    <div class="item car1"><img src="assets/images/alfa_romeo_8c_2900b.jpg">
-      <h4>Alfa Romeo 8C 2900B</h4>
-      <h4>£89,000</h4>
+    <div class="item car0" value="£19000"><img src="assets/images/bikey0.jpg">
+      <h4>1948 Royal Enfield</h4>
+      <h4>£19,000</h4>
     </div>
-    <div class="item car2"><img src="assets/images/rolls_royce_phantom.jpg">
-      <h4>Rolls Royce Phantom</h4>
-      <h4>£100,000</h4>
+    <div class="item car1" value="£28000"><img src="assets/images/bikey1.jpg">
+      <h4>Kawasaki Vulcan</h4>
+      <h4>£28,000</h4>
     </div>
-    <div class="item car3"><img src="assets/images/alfa_romeo_8c_2900b.jpg">
-      <h4>Alfa Romeo 8C 2900B</h4>
-      <h4>£89,000</h4>
+    <div class="item car2" value="£22000"><img src="assets/images/bikey2.jpg">
+      <h4>1967 Harley Cruiser</h4>
+      <h4>£22,000</h4>
     </div>
-    <div class="item car4"><img src="assets/images/rolls_royce_phantom.jpg">
-      <h4>Rolls Royce Phantom</h4>
-      <h4>£100,000</h4>
+    <div class="item car3" value="£8000"><img src="assets/images/bikey3.jpg">
+      <h4>1960 Trans Moped</h4>
+      <h4>£8,000</h4>
+    </div>
+    <div class="item car3" value="£33,000"><img src="assets/images/bikey4.jpg">
+      <h4>Harley Davidson Wrangler</h4>
+      <h4>£33,000</h4>
     </div>
   </section>
   <section id="boat-carousel" class="page-section carousel warp">
-    <div class="item car1"><img src="assets/images/alfa_romeo_8c_2900b.jpg">
-      <h4>Alfa Romeo 8C 2900B</h4>
-      <h4>£89,000</h4>
+    <div class="item car0" value="£50000"><img src="assets/images/boaty0.jpg">
+      <h4>1988 Pleasant Cruiser</h4>
+      <h4>£50,000</h4>
     </div>
-    <div class="item car2"><img src="assets/images/rolls_royce_phantom.jpg">
-      <h4>Rolls Royce Phantom</h4>
-      <h4>£100,000</h4>
+    <div class="item car1" value="£1250000"><img src="assets/images/boaty1.jpg">
+      <h4>1989 Merry Whipman</h4>
+      <h4>£1,250,000</h4>
     </div>
-    <div class="item car3"><img src="assets/images/alfa_romeo_8c_2900b.jpg">
-      <h4>Alfa Romeo 8C 2900B</h4>
-      <h4>£89,000</h4>
+    <div class="item car2" value="£3000"><img src="assets/images/boaty2.jpg">
+      <h4>1982 Californian Jetski</h4>
+      <h4>£3,000</h4>
     </div>
-    <div class="item car4"><img src="assets/images/rolls_royce_phantom.jpg">
-      <h4>Rolls Royce Phantom</h4>
-      <h4>£100,000</h4>
+    <div class="item car3" value="£8000"><img src="assets/images/bikey3.jpg">
+      <h4>1960 Trans Moped</h4>
+      <h4>£8,000</h4>
+    </div>
+    <div class="item car3" value="£33,000"><img src="assets/images/bikey4.jpg">
+      <h4>Harley Davidson Wrangler</h4>
+      <h4>£33,000</h4>
     </div>
   </section>
   <section id="customize" class="page-section">

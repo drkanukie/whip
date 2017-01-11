@@ -239,7 +239,7 @@
       background-size: cover;
       background-repeat: no-repeat;
       background-position: 50% 50%;
-      background-image: url("../assets/images/144H.jpg");
+      background-image: url("../assets/images/joqgijmqens-bady-qb.jpg");
       color: #FFFFFF;
       display: flex;
       flex-direction: column;
@@ -571,6 +571,16 @@
       max-width: 50%;
       text-align: center;
       margin: auto;
+    }
+    
+    .carousel .item img {
+      position: relative;
+      justify-content: center;
+      width: 30rem;
+      height: 23rem;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      background-size: cover;
     }
     
     .controllers {
