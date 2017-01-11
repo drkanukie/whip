@@ -47,70 +47,71 @@
     </a>
   </section>
   <section id="model-info" class="page-section">
-    <h2>Models</h2>
+    <h1>Models</h1>
     <hr>
     <p>Select your vehicle model below</p>
   </section>
   <section id="car-carousel" class="page-section carousel">
-    <div class="item car1"><img src="assets/images/alfa_romeo_8c_2900b.jpg">
+    <div id="car0" class="item" value="£89000">
+      <img src="assets/images/alfa_romeo_8c_2900b.jpg">
       <h4>Alfa Romeo 8C 2900B</h4>
-      <h4>£89,000</h4></div>
-    <h4>Car</h4>
+      <h4>£89,000</h4>
     </div>
-    <div class="item car2"><img src="assets/images/rolls_royce_phantom.jpg">
+    <div id="car1" class="item" value="£34000"><img src="assets/images/rolls_royce_phantom.jpg">
       <h4>Rolls Royce Phantom</h4>
-      <h4>£100,000</h4></div>
-    <div class="item car3"><img src="assets/images/alfa_romeo_8c_2900b.jpg">
+      <h4>£100,000</h4>
+    </div>
+    <div id="car2" class="item" value="£88000"><img src="assets/images/alfa_romeo_8c_2900b.jpg">
       <h4>Alfa Romeo 8C 2900B</h4>
-      <h4>£89,000</h4></div>
+      <h4>£89,000</h4>
     </div>
-    <div class="item car4"><img src="assets/images/rolls_royce_phantom.jpg">
+    <div id="car3" class="item" value="£66000"><img src="assets/images/rolls_royce_phantom.jpg">
       <h4>Rolls Royce Phantom</h4>
-      <h4>£100,000</h4></div>
+      <h4>£100,000</h4>
     </div>
-    <div class="item car5"><img src="assets/images/rolls_royce_phantom.jpg">
+    <div id="car4" class="item" value="£65000"><img src="assets/images/rolls_royce_phantom.jpg">
       <h4>Rolls Royce Phantom</h4>
-      <h4>£100,000</h4></div>
+      <h4>£100,000</h4>
     </div>
   </section>
   <section id="bike-carousel" class="page-section carousel warp">
     <div class="item car1"><img src="assets/images/alfa_romeo_8c_2900b.jpg">
       <h4>Alfa Romeo 8C 2900B</h4>
-      <h4>£89,000</h4></div>
-    <h4>bike</h4>
+      <h4>£89,000</h4>
     </div>
     <div class="item car2"><img src="assets/images/rolls_royce_phantom.jpg">
       <h4>Rolls Royce Phantom</h4>
-      <h4>£100,000</h4></div>
+      <h4>£100,000</h4>
+    </div>
     <div class="item car3"><img src="assets/images/alfa_romeo_8c_2900b.jpg">
       <h4>Alfa Romeo 8C 2900B</h4>
-      <h4>£89,000</h4></div>
+      <h4>£89,000</h4>
     </div>
     <div class="item car4"><img src="assets/images/rolls_royce_phantom.jpg">
       <h4>Rolls Royce Phantom</h4>
-      <h4>£100,000</h4></div>
+      <h4>£100,000</h4>
     </div>
   </section>
   <section id="boat-carousel" class="page-section carousel warp">
     <div class="item car1"><img src="assets/images/alfa_romeo_8c_2900b.jpg">
       <h4>Alfa Romeo 8C 2900B</h4>
-      <h4>£89,000</h4></div>
-    <h4>Boat</h4>
+      <h4>£89,000</h4>
     </div>
     <div class="item car2"><img src="assets/images/rolls_royce_phantom.jpg">
       <h4>Rolls Royce Phantom</h4>
-      <h4>£100,000</h4></div>
+      <h4>£100,000</h4>
+    </div>
     <div class="item car3"><img src="assets/images/alfa_romeo_8c_2900b.jpg">
       <h4>Alfa Romeo 8C 2900B</h4>
-      <h4>£89,000</h4></div>
+      <h4>£89,000</h4>
     </div>
     <div class="item car4"><img src="assets/images/rolls_royce_phantom.jpg">
       <h4>Rolls Royce Phantom</h4>
-      <h4>£100,000</h4></div>
+      <h4>£100,000</h4>
     </div>
   </section>
   <section id="customize" class="page-section">
-    <h2>Customize</h2>
+    <h1>Customize</h1>
     <hr>
     <p>Customize your vehicle to your liking</p>
   </section>
@@ -307,12 +308,15 @@ $(document).ready(function() {
   $('#addToCart').on('click', function() {
     console.log("added to cart");
     saveElement("input-elements", "formdata");
+    var currentSlide = $('.carousel').slick('slickCurrentSlide');
+    saveElement("car" + currentSlide, "vehicledata");
     saveRadio();
     localStorage.setItem(basket_key, total);
   });
 
   // INIT TOTAL
   total = 0;
+  total = $("#car0").attr("value").substring(1) * 1;
   $("input[type=radio]").each(function(index) {
     if ($(this).is(':checked')) {
       //console.log($(this).val().substring(1) * 1);
@@ -326,6 +330,13 @@ $(document).ready(function() {
     calcTotal();
     saveRadio();
   });
+
+  $('.carousel').on('afterChange', function(event, slick, currentSlide) {
+    calcTotal();
+    //total = total + price;
+    //$("#output").val("£" + total);
+  });
+
 });
 </script>
 

@@ -291,7 +291,7 @@
       flex-direction: row;
       justify-content: center;
       padding: 0 0.8rem 0 0.8rem;
-      margin: 0.8rem auto 7.2rem auto;
+      margin: 0.8rem auto 0 auto;
       max-width: 112rem;
     }
     
@@ -349,25 +349,8 @@
       background-image: url("../assets/images/boat1.jpg");
     }
     
-    #guarantee {
-      background-image: url("../assets/images/guarantee.jpg");
-    }
-    
-    #satisfaction {
-      background-image: url("../assets/images/satisfaction.jpg");
-    }
-    
-    #promotion {
-      background-image: url("../assets/images/promotion.jpg");
-    }
-    
-    #map {
-      height: 40rem;
-      width: 80rem;
-    }
-    
     .picture {
-      background-size: cover;
+      background-size: contain;
       background-repeat: no-repeat;
       background-position: 50% 50%;
       width: 50%;
@@ -375,14 +358,35 @@
     }
     
     #courier {
-      background-image: url("../assets/images/courier.jpg");
+      background-image: url("../assets/images/vintageTruck.png");
+    }
+    
+    #guarantee {
+      background-image: url("../assets/images/guarantee.jpg");
+    }
+    
+    #satisfaction {
+      background-image: url("../assets/images/satisfaction.png");
+    }
+    
+    #promotion {
+      background-image: url("../assets/images/promotion.png");
     }
     
     #inner-map {
-      display: block;
-      margin: auto;
-      width: 68%;
+      max-width: 112rem;
+      margin: 10rem auto 10rem auto;
+    }
+    
+    #inner-map h1,
+    #inner-map p {
       text-align: center;
+    }
+    
+    #map {
+      height: 40rem;
+      width: 100%;
+      margin: 0.8rem;
     }
     
     .customize-button {
@@ -426,20 +430,16 @@
       padding: 1.6rem;
     }
     
+    #vehicle {
+      text-align: center;
+    }
+    
     #model-info {
       text-align: center;
     }
     
-    #model-info hr {
-      width: 3%;
-    }
-    
     #customize {
       text-align: center;
-    }
-    
-    #customize hr {
-      width: 3%;
     }
     
     .page-section h1 {
@@ -469,23 +469,26 @@
     }
     /* SOURCES */
     
-    .testamonial-left {
+    .testamonial {
+      max-width: 112rem;
       display: flex;
       flex-direction: row;
       flex-wrap: nowrap;
-      justify-content: flex-start;
+      justify-content: center;
       align-items: center;
-      margin-top: 25rem;
-      margin-bottom: 30rem;
+      margin: 10rem auto 0 auto;
     }
     
-    .testamonial-right {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      justify-content: flex-start;
-      align-items: center;
-      margin-top: 25rem;
+    .testamonial h1 {
+      text-align: center;
+    }
+    
+    .testamonial article.left {
+      margin-right: 4.8rem;
+    }
+    
+    .testamonial article.right {
+      margin-left: 4.8rem;
     }
     
     iframe {
@@ -503,11 +506,6 @@
     #account-header h1 {
       margin-top: 10rem;
       text-align: center;
-    }
-    
-    .padding-article {
-      padding: 2rem;
-      width: 50%;
     }
     
     .rightFloat {
@@ -535,7 +533,8 @@
     /* PRODUCT CHOOSE */
     
     #product,
-    #basket-content {
+    #basket-content,
+    #top-section {
       margin-top: 11.8rem;
     }
     
@@ -689,6 +688,7 @@
     #total {
       display: flex;
       justify-content: space-between;
+      margin: 0 auto 7.2rem auto;
     }
     
     #total h2 {
@@ -876,15 +876,6 @@
     
     .boat {
       background-image: url("../assets/images/boating.jpg");
-    }
-    
-    .picture {
-      margin: 0 3rem 0 3rem;
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: 50% 50%;
-      width: 50%;
-      height: 50rem;
     }
     
     .image-align {

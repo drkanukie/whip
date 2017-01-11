@@ -32,6 +32,10 @@
   </header>
   <form id="basket-content" class="page-section">
     <h1>Summary</h1>
+    <hr>
+    <section id="vehicle" class="page-section">
+      <!--  local storage -->
+    </section>
     <div id="input-elements"></div>
   </form>
   <section id="total" class="page-section">
@@ -69,6 +73,7 @@
 $(document).ready(function() {
 
   basketContent();
+  //carouselInit();
 
   var basket = getTotal();
   $("#output").val("£" + basket);

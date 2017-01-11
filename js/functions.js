@@ -180,12 +180,15 @@ function resetRadioEvents() {
 function resetPicker(picker_on, picker1, picker2, carousel_on, carousel1, carousel2) {
   console.log("resetPicker");
   $(carousel_on).removeClass("warp");
+  //$(carousel_on).addClass("carousel");
   $(picker_on).addClass("pick-selected");
 
   $(carousel1).addClass("warp");
+  //$(carousel1).removeClass("carousel");
   $(picker1).removeClass("pick-selected");
 
   $(carousel2).addClass("warp");
+  //$(carousel2).removeClass("carousel");
   $(picker2).removeClass("pick-selected");
 
   restoreElement("input-elements", "newform");
@@ -242,13 +245,17 @@ function vehiclePickerInit() {
 }
 
 function calcTotal() {
+  var currentSlide = $('.carousel').slick('slickCurrentSlide');
+  console.log("currentSlide = " + currentSlide);
+  p6 = $("#car" + currentSlide).attr("value").substring(1) * 1;
   if ($("input[name=color]:checked").val()) {
     p1 = $("input[name=color]:checked").val().substring(1) * 1;
     p2 = $("input[name=engine]:checked").val().substring(1) * 1;
     p3 = $("input[name=rims]:checked").val().substring(1) * 1;
     p4 = $("input[name=tyres]:checked").val().substring(1) * 1;
     p5 = $("input[name=decor]:checked").val().substring(1) * 1;
-    total = p1 + p2 + p3 + p4 + p5;
+
+    total = p1 + p2 + p3 + p4 + p5 + p6;
     $("#output").val("£" + total);
   }
 }
@@ -257,6 +264,7 @@ function calcTotal() {
 function basketContent() {
   console.log("basketContent");
   restoreElement("input-elements", "formdata");
+  restoreElement("vehicle", "vehicledata");
 
   $('input[type="radio"]').each(function() {
     // get radio id and checked state
