@@ -183,9 +183,9 @@
     $('header').addClass("topPage");
     $(window).scroll(function(event) {
       var scroll = $(window).scrollTop();
-      if (scroll <= 100) {
+      if (scroll <= 50) {
         $('header').addClass("topPage");
-      } else if (scroll >= 100) {
+      } else if (scroll >= 50) {
         $('header').removeClass("topPage");
       }
 
