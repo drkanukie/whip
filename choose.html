@@ -33,7 +33,7 @@
   <section id="product" class="page-section">
     <h1>Choose your vehicle</h1>
     <hr>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p>Pick from our selection of vintage Cars, Bikes and Boats below</p>
   </section>
   <section class="product-selector">
     <a href="#" id="car-picker" class="product pick-selected">
@@ -293,6 +293,22 @@
 </body>
 <script type="text/javascript">
 $(document).ready(function() {
+
+  $(window).bind('mousewheel', function(event) {
+    if (event.originalEvent.wheelDelta >= 0) {
+
+      $('header').animate({
+          top: "+0px",
+        },
+        200);
+    } else {
+
+      $('header').animate({
+        top: "-110px"
+      }, 200);
+    }
+  });
+
 
   // RESET HERE
   //localStorage.clear();
