@@ -503,16 +503,14 @@
       margin-left: 4.8rem;
     }
     
-    iframe {
-      height: 100%;
-      width: 100%;
+    #video {
+      width: 100% !important;
+      height: auto !important;
     }
     
-    .video {
-      max-width: 112rem;
-      margin: auto;
-      width: 20rem;
-      height: 30rem;
+    #video iframe {
+      height: 50rem;
+      width: 100%;
     }
     
     #account-header h1 {
@@ -623,6 +621,10 @@
     }
     
     .slick-slide {
+      -webkit-transition: all 0.3s ease;
+      -moz-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      -ms-transition: all 0.3s ease;
       opacity: 0.5;
     }
     
@@ -632,6 +634,10 @@
     }
     
     .slick-center {
+      -webkit-transition: all 0.3s ease;
+      -moz-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      -ms-transition: all 0.3s ease;
       opacity: 1;
     }
     /* #car-carousel, 
@@ -724,6 +730,7 @@
       padding: 0.8rem 1.6rem;
       font-size: 2.4rem;
       border: 0;
+      cursor: pointer;
     }
     
     #total a {
@@ -949,6 +956,10 @@
       width: 30%;
     }
     
+    .center-textcontent {
+      text-align: center;
+    }
+    
     .social-links {
       list-style-type: none;
       display: flex;
@@ -968,4 +979,56 @@
     
     .social-links i:hover {
       color: #cccccc;
+    }
+    
+    #decide-commute h3 {
+      margin-top: 2rem;
+      text-align: center;
+    }
+    
+    .popup {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+    }
+    /* The actual popup (appears on top) */
+    
+    .popup .popuptext {
+      visibility: hidden;
+      width: 160px;
+      background-color: #555;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 8px 0;
+      position: absolute;
+      z-index: 1;
+      bottom: 125%;
+      left: 50%;
+      margin-left: -80px;
+    }
+    /* Popup arrow */
+    
+    .popup .popuptext::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: #555 transparent transparent transparent;
+    }
+    /* Toggle this class when clicking on the popup container (hide and show the popup) */
+    
+    .popup .show {
+      visibility: visible;
+      -webkit-animation: fadeIn 1s;
+      animation: fadeIn 1s
+    }
+    /* Add animation (fade in the popup) */
+    
+    .mapFrame {
+      width: 100%;
+      min-height: 32rem;
     }

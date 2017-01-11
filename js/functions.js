@@ -281,3 +281,8 @@ function basketContent() {
     }
   });
 }
+
+function popmeUp() {
+  var popup = document.getElementById('myPopup');
+  popup.classList.toggle('show');
+}

@@ -22,7 +22,7 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="choose.html">Choose</a></li>
         <li><a href="decide.html" class="current">Decide</a></li>
-        <li><a href="sources.html">Sources</a></li>
+        <li><a href="demo.html">Demo</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li>
           <a id="basket" href="basket.html"><i class="fa fa-shopping-basket" aria-hidden="true"></i></a></li>
@@ -98,6 +98,23 @@
 </body>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGUMbCFHnewltppHjmjv3eZMHYRnGHzng&callback=initMap">
 $(document).ready(function() {
+
+
+  $(window).bind('mousewheel', function(event) {
+    if (event.originalEvent.wheelDelta >= 0) {
+
+      $('header').animate({
+          top: "+0px",
+        },
+        200);
+    } else {
+
+      $('header').animate({
+        top: "-110px"
+      }, 200);
+    }
+  });
+
   initMap();
   sayHello();
 })

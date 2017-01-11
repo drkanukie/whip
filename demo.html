@@ -11,49 +11,6 @@
   <link rel="stylesheet" type="text/css" href="css/styles.css" />
   <link rel="page icon" type="image/png" href="assets/favicon.png" />
   <link href="css/font-awesome.min.css" rel="stylesheet" />
-  <!-- <style type="text/css">
-  .width-limit {
-    margin: auto;
-    width: 75%;
-    text-align: center;
-    display: block;
-    height: auto;
-  }
-  
-  hr {}
-  
-  #filler {
-    height: 25rem;
-  }
-  
-  .video {
-    max-width: 112rem;
-    margin: auto;
-    display: flex;
-  }
-  
-  .testamonial-left {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    width: 75%;
-    margin: auto;
-  }
-  
-  .picture {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    width: 50%;
-    height: 25rem;
-  }
-  
-  .padding-article {
-    margin: 2rem;
-  }
-  </style> -->
 </head>
 
 <body>
@@ -65,25 +22,25 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="choose.html">Choose</a></li>
         <li><a href="decide.html">Decide</a></li>
-        <li><a href="sources.html" class="current">Sources</a></li>
+        <li><a href="demo.html" class="current">Demo</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li>
           <a id="basket" href="basket.html"><i class="fa fa-shopping-basket" aria-hidden="true"></i></a></li>
       </ul>
     </nav>
   </header>
-  <section class="testamonial-right">
-    <article class="picture " id="video">
-      <iframe src="https://www.youtube.com/embed/UlnibxsxcmY" frameborder="0" scrolling="no" allowfullscreen></iframe>
-    </article>
-    <article class="padding-article">
-      <h2>Demo</h2>
-      <hr class="lefty">
+  <section class="page-section">
+    <article class="inner-width">
+      <h1>Demo</h1>
+      <hr>
       <p>Here is the YouTube video showing the website working on different browsers</p>
+    </article>
+    <article id="video">
+      <iframe src="https://www.youtube.com/embed/UlnibxsxcmY" frameborder="0" scrolling="no" allowfullscreen></iframe>
     </article>
   </section>
   <section id="sources" class="page-section">
-    <h2>Sources</h2>
+    <h1>Sources</h1>
     <hr>
     <article class="source-article">
       <h4><a href="https://thenounproject.com/" target="_blank">Free for non-commercal use icons</a></h4>
@@ -120,5 +77,25 @@
     <article class="rights">&copy; Whip 2016</article>
   </footer>
 </body>
+<script type="text/javascript">
+$(document).ready(function() {
+
+  $(window).bind('mousewheel', function(event) {
+    if (event.originalEvent.wheelDelta >= 0) {
+
+      $('header').animate({
+          top: "+0px",
+        },
+        200);
+    } else {
+
+      $('header').animate({
+        top: "-110px"
+      }, 200);
+    }
+  });
+
+});
+</script>
 
 </html>

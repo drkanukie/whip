@@ -12,54 +12,6 @@
   <link rel="page icon" type="image/png" href="assets/favicon.png" />
   <link href="css/font-awesome.min.css" rel="stylesheet" />
 </head>
-<style>
-html {
-  font-size: 62.5%;
-  box-sizing: border-box;
-}
-
-body {
-  font-size: 1.4rem;
-  font-family: sans-serif;
-}
-
-p {
-  font-size: 1.6rem;
-  font-family: sans-serif;
-  padding: 0 0 1.6rem 0;
-  text-indent: 0;
-  text-align: left;
-}
-
-
-/* =14px */
-
-h1 {
-  font-size: 2.4rem;
-  margin-bottom: 2.4rem;
-}
-
-
-/* =24px */
-
-section {
-  margin: 2.0rem;
-}
-
-.contact {
-  display: flex;
-  flex-direction: row
-}
-
-.contacticon {
-  font-size: 3.2rem;
-}
-
-.mapFrame {
-  width: 100%;
-  min-height: 32rem;
-}
-</style>
 
 <body>
   <header class="clearfix">
@@ -70,23 +22,25 @@ section {
         <li><a href="index.html">Home</a></li>
         <li><a href="choose.html">Choose</a></li>
         <li><a href="decide.html">Decide</a></li>
-        <li><a href="sources.html">Sources</a></li>
+        <li><a href="demo.html">Demo</a></li>
         <li><a href="contact.html" class="current">Contact</a></li>
         <li>
           <a id="basket" href="basket.html"><i class="fa fa-shopping-basket" aria-hidden="true"></i></a></li>
       </ul>
     </nav>
   </header>
-  <section class="top-padding">
+  <section class="top-padding page-section">
     <h1>How to find us</h1>
     <hr>
     <iframe class="mapFrame" src="http://maps.google.com/maps?q=53.238667,-0.521082&z=12&output=embed" frameborder="0" style="border:0" allowfullscreen></iframe>
   </section>
-  <section>
+  <section class="page-section center-textcontent">
     <h1>How to contact us</h1>
-    <p><i class="fa contacticon fa-phone-square"></i>&nbsp;01480 430011</p>
-    <p><i class="fa contacticon fa-envelope"></i>&nbsp;sales@whip.com</p>
+    <hr>
+    <p><i class="fa contacticon fa-phone-square"></i>&nbsp;0800 783 345</p>
+    <p><i class="fa contacticon fa-envelope"></i>&nbsp;support@whip.com</p>
     <h1>Follow us on</h1>
+    <hr>
     <p><i class="fa contacticon fa-facebook-square "></i>&nbsp;www.facebook.com/whip</p>
     <p><i class="fa contacticon fa-twitter-square "></i>&nbsp;@whip</p>
   </section>
@@ -115,5 +69,24 @@ section {
     <article class="rights">&copy; Whip 2016</article>
   </footer>
 </body>
+<script type="text/javascript">
+$(document).ready(function() {
+
+  $(window).bind('mousewheel', function(event) {
+    if (event.originalEvent.wheelDelta >= 0) {
+
+      $('header').animate({
+          top: "+0px",
+        },
+        200);
+    } else {
+
+      $('header').animate({
+        top: "-110px"
+      }, 200);
+    }
+  });
+});
+</script>
 
 </html>
