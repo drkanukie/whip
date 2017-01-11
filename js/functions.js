@@ -248,7 +248,7 @@ function vehiclePickerInit() {
 function calcTotal() {
   var currentSlide = $('.carousel').slick('slickCurrentSlide');
   console.log("currentSlide = " + currentSlide);
-  p6 = $("#car" + currentSlide).attr("value").substring(1) * 1;
+  p6 = $("#car" + currentSlide).attr("data-value").substring(1) * 1;
   if ($("input[name=color]:checked").val()) {
     p1 = $("input[name=color]:checked").val().substring(1) * 1;
     p2 = $("input[name=engine]:checked").val().substring(1) * 1;
