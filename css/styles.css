@@ -906,6 +906,10 @@
       font-weight: 400;
     }
     
+    footer a {
+      color: white;
+    }
+    
     .rights {
       padding: 1.6rem;
       text-align: center;
