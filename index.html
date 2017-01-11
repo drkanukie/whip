@@ -26,7 +26,8 @@
         <li><a href="demo.html">Demo</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li>
-          <a id="basket" href="basket.html"><i class="fa fa-shopping-basket" aria-hidden="true"></i></a></li>
+          <a id="basket" href="basket.html"><i class="fa fa-shopping-basket" aria-hidden="true"></i></a>
+        </li>
       </ul>
     </nav>
   </header>
@@ -34,20 +35,19 @@
   <!-- This is the start of the banner section -->
   <section class="banner">
     <article id="banner-text">
-      <h3>Browse our selection of classic vintage vehicles</h3>
-      <h4>Customize them to your liking.</h4>
-      <a href="choose.html">Customizer<button type="button"></button></a>
+      <h3 class="banner-shadow">Browse our selection of classic vintage vehicles</h3>
+      <h4 class="banner-shadow">Customize them to your liking.</h4>
+      <a class="customizer-button" href="choose.html">Customizer</a>
     </article>
   </section>
   <!-- This is the end of the banner section -->
-  <!-- This is the end of the choose section -->
   <!-- This is the start of the decide section -->
   <section id="decide" class="page-section">
     <article id="decide-commute">
       <h1>Our Vehicles</h1>
       <hr>
       <h3>Click one to customize it</h3>
-      <!-- This is the start of the choose section -->
+      <!-- product picker -->
       <div class="product-selector">
         <a href="choose.html" id="car-picker" class="product">
           <h3>Car</h3>
@@ -148,8 +148,8 @@
       <p>Since Whip is local to Lincoln, we reached out to them for our engineering department to see if they could provide us with some of their custom engines. Oh wow... these engines are the real deal, they are so effecient but pack an almighty punch. Our students have had a real blast taking the engines apart and checking out how you get your fuel injector to work as such a high rpm, truly fascinating. Thank you Whip for these excellent engines, they will be put to good use in the year to come.</p>
     </article>
   </section>
-  <!-- This is the end of the sources section -->
-  <!-- This is the start of the contact section -->
+  <!-- This is the end of the decide sections -->
+  <!-- This is the start of the footer -->
   <footer>
     <section class="footer-column page-section">
       <article class="footer-content">
@@ -174,40 +174,41 @@
     </section>
     <article class="rights">&copy; Whip 2016</article>
   </footer>
-  <!-- This is the end of the contact section -->
+  <!-- This is the end of the footer section -->
+  <!-- PAGE SCRIPTS -->
+  <script>
+  $(document).ready(function() {
+
+    //var scroll = 50;
+    $('header').addClass("topPage");
+    $(window).scroll(function(event) {
+      var scroll = $(window).scrollTop();
+      if (scroll <= 100) {
+        $('header').addClass("topPage");
+      } else if (scroll >= 100) {
+        $('header').removeClass("topPage");
+      }
+
+    });
+
+    $(window).bind('mousewheel', function(event) {
+      if (event.originalEvent.wheelDelta >= 0) {
+
+        $('header').animate({
+            top: "+0px",
+          },
+          200);
+      } else {
+
+        $('header').animate({
+          top: "-110px"
+        }, 200);
+      }
+    });
+    // go to choose page
+    savePicker();
+  })
+  </script>
 </body>
-<script>
-$(document).ready(function() {
-
-  //var scroll = 50;
-  $('header').addClass("topPage");
-  $(window).scroll(function(event) {
-    var scroll = $(window).scrollTop();
-    if (scroll <= 100) {
-      $('header').addClass("topPage");
-    } else if (scroll >= 100) {
-      $('header').removeClass("topPage");
-    }
-
-  });
-
-  $(window).bind('mousewheel', function(event) {
-    if (event.originalEvent.wheelDelta >= 0) {
-
-      $('header').animate({
-          top: "+0px",
-        },
-        200);
-    } else {
-
-      $('header').animate({
-        top: "-110px"
-      }, 200);
-    }
-  });
-  // go to choose page
-  savePicker();
-})
-</script>
 
 </html>

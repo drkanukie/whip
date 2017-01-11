@@ -279,6 +279,10 @@ nav li a:hover {
   text-decoration: none;
 }
 
+.banner-shadow {
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+}
+
 .banner h3,
 .product h3 {
   font-family: 'Lobster', cursive;
@@ -286,7 +290,6 @@ nav li a:hover {
   line-height: 145%;
   margin: 0 0 0.8rem 0;
   text-align: center;
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
 }
 
 .banner h4 {
@@ -296,7 +299,7 @@ nav li a:hover {
   text-align: center;
 }
 
-.banner button {
+.customizer-button {
   color: white;
   background-color: Transparent;
   text-align: center;
