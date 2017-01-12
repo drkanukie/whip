@@ -58,6 +58,7 @@
   
   h3 {
     font-size: 2.25rem;
+    -webkit-filter: blur(0px);
     filter: blur(0px);
   }
   
@@ -208,8 +209,14 @@
     background-position: 50% 50%;
     background-image: url("../assets/images/joqgijmqens-bady-qb.jpg");
     color: #FFFFFF;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
     justify-content: flex-end;
   }
   
@@ -269,8 +276,14 @@
   
   .product-selector {
     width: 100%;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
     flex-direction: row;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
     justify-content: center;
     padding: 0 0.8rem 0 0.8rem;
     margin: 0.8rem auto 0 auto;
@@ -286,8 +299,14 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 50%;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
     justify-content: flex-end;
   }
   
@@ -431,10 +450,20 @@
   
   .pullquote {
     width: 33.3%;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: distribute;
     justify-content: space-around;
     margin: 3.2rem auto 0 auto;
   }
@@ -453,10 +482,20 @@
   
   .testamonial {
     max-width: 112rem;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
     flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
     align-items: center;
     margin: 10rem auto 0 auto;
   }
@@ -495,8 +534,14 @@
   .sources {
     /*margin-top: 10rem;*/
     margin-bottom: 5rem;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
     flex-direction: row;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
     justify-content: space-between;
   }
   
@@ -536,6 +581,8 @@
   
   .carousel .item img {
     position: relative;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
     justify-content: center;
     /* width: 30rem;
     height: 23rem;*/
@@ -603,17 +650,6 @@
     -ms-transition: all 0.3s ease;
     opacity: 1;
   }
-  /* #car-carousel, 
-#boat-carousel,
-#bike-carousel {
-  display: none;
-}
-*/
-  /*
-.car1 {
-  background-image: url("assets/images/alfa_romeo_8c_2900b.jpg");
-}*/
-  /* forms */
   
   .form-content {
     padding: 0 3.2rem 0 3.2rem;
@@ -647,8 +683,14 @@
   }
   
   ul.radio li {
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     max-width: 75%;
     padding: 0.8rem;
@@ -680,7 +722,11 @@ TOTAL BARS
 */
   
   #total {
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     margin: 0 auto 7.2rem auto;
   }
@@ -914,8 +960,14 @@ TOTAL BARS
   }
   
   .footer-column {
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
     flex-direction: row;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     border-bottom: 1px solid #999;
   }
@@ -930,8 +982,14 @@ TOTAL BARS
   
   .social-links {
     list-style-type: none;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
     flex-direction: row;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     padding: 0;
   }
@@ -1027,7 +1085,8 @@ TOTAL BARS
     -moz-transition: opacity .4s ease-in-out;
     -webkit-transition: opacity .4s ease-in-out;*/
     }
-    nav ul/*,
+    nav ul
+    /*,
  nav:active ul */
     {
       display: none;
@@ -1053,6 +1112,8 @@ TOTAL BARS
     }
     /* footer */
     .footer-column {
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
       flex-direction: column;
     }
     .footer-content {
@@ -1060,11 +1121,15 @@ TOTAL BARS
     }
     /* product selector */
     .product-selector {
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
       flex-direction: column;
     }
     /* home sources 
   */
     .sources {
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
       flex-direction: column;
     }
     .sources article {
@@ -1099,6 +1164,8 @@ TOTAL BARS
       margin: 0;
     }
     #total {
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
       flex-direction: column;
     }
     #total h2 {
@@ -1106,6 +1173,8 @@ TOTAL BARS
       text-align: center;
     }
     .testamonial {
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
       flex-direction: column;
       margin-top: 3.2rem;
     }
@@ -1130,6 +1199,8 @@ TOTAL BARS
       margin-bottom: 1.6rem;
     }
     .testamonial .picture {
+      -webkit-order: 2;
+      -ms-flex-order: 2;
       order: 2;
     }
     .inner-width {
