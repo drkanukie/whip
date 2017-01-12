@@ -953,6 +953,11 @@ TOTAL BARS
     color: white;
   }
   
+  footer a:hover,
+  footer a:active {
+    color: white;
+  }
+  
   .rights {
     padding: 1.6rem;
     text-align: center;
@@ -1205,5 +1210,8 @@ TOTAL BARS
     }
     .inner-width {
       width: 100%;
+    }
+    p {
+      font-weight: normal;
     }
   }
