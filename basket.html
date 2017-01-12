@@ -72,21 +72,21 @@
     <article class="rights">&copy; Whip 2016</article>
   </footer>
   <!-- This is the end of the contact section -->
+  <script>
+  $(document).ready(function() {
+
+    basketContent();
+    //carouselInit();
+
+    var basket = getTotal();
+    $("#output").val("£" + basket);
+
+    console.log(basket)
+    var color = getColor();
+    $("#color").val(color)
+    console.log(color)
+  });
+  </script>
 </body>
-<script>
-$(document).ready(function() {
-
-  basketContent();
-  //carouselInit();
-
-  var basket = getTotal();
-  $("#output").val("£" + basket);
-
-  console.log(basket)
-  var color = getColor();
-  $("#color").val(color)
-  console.log(color)
-});
-</script>
 
 </html>
