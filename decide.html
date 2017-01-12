@@ -6,10 +6,11 @@
   <meta charset="utf-8" />
   <title>Whip | Choose your ride</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGUMbCFHnewltppHjmjv3eZMHYRnGHzng&callback=initMap"></script>
   <script type="text/javascript" src="js/slick.min.js"></script>
   <script src="js/functions.js"></script>
   <link rel="stylesheet" type="text/css" href="css/styles.css" />
-  <link rel="page icon" type="image/png" href="assets/favicon.png" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
   <link href="css/font-awesome.min.css" rel="stylesheet" />
 </head>
 
@@ -79,9 +80,9 @@
       </article>
       <article class="footer-content">
         <h4>Contact</h4>
-        <h5>Number:     <a href="tel:0800 783 345">0800 783 345</a></h5>
-        <h5>Past 9pm:   <a href="tel:0800 263 263">0800 263 263</a></h5>
-        <h5>Email:      <a href="mailto:support@whip.com">support@whip.com</a></h5>
+        <h5>Number:     <a href="#">0800 783 345</a></h5>
+        <h5>Past 9pm:   <a href="#">0800 263 263</a></h5>
+        <h5>Email:      <a href="#">support@whip.com</a></h5>
       </article>
       <article class="footer-content">
         <h4>Follow Us</h4>
@@ -95,16 +96,11 @@
     </section>
     <article class="rights">&copy; Whip 2016</article>
   </footer>
+  <script>
+  $(document).ready(function() {
+    initMap();
+  })
+  </script>
 </body>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGUMbCFHnewltppHjmjv3eZMHYRnGHzng&callback=initMap">
-$(document).ready(function() {
-
-
-
-
-  initMap();
-  sayHello();
-})
-</script>
 
 </html>
