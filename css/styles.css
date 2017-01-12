@@ -512,8 +512,6 @@
   }
   /* PRODUCT CHOOSE */
   
-  #product,
-  #basket-content,
   #top-section {
     margin-top: 11.8rem;
   }
@@ -1012,7 +1010,7 @@ TOTAL BARS
   
   @media only screen and (max-width: 48rem) {
     header {
-      position: absolute;
+      position: fixed;
     }
     #menu-icon {
       display: inline-block;
@@ -1133,5 +1131,8 @@ TOTAL BARS
     }
     .testamonial .picture {
       order: 2;
+    }
+    .inner-width {
+      width: 100%;
     }
   }
