@@ -37,13 +37,13 @@
     <p id="model-info">Pick from our selection of vintage Cars, Bikes and Boats below</p>
   </section>
   <section class="product-selector">
-    <a href="#" id="car-picker" class="product pick-selected">
+    <a href="#" id="car-picker" class="product pick-selected banner-shadow">
       <h3>Car</h3>
     </a>
-    <a href="#" id="bike-picker" class="product">
+    <a href="#" id="bike-picker" class="product banner-shadow">
       <h3>Bike</h3>
     </a>
-    <a href="#" id="boat-picker" class="product">
+    <a href="#" id="boat-picker" class="product banner-shadow">
       <h3>Boat</h3>
     </a>
   </section>
@@ -287,9 +287,9 @@
       </article>
       <article class="footer-content">
         <h4>Contact</h4>
-        <h5>Number:     0800 783 345</h5>
-        <h5>Past 9pm:   0800 263 263</h5>
-        <h5>Email:      support@whip.com</h5>
+        <h5>Number:     <a href="tel:0800 783 345">0800 783 345</a></h5>
+        <h5>Past 9pm:   <a href="tel:0800 263 263">0800 263 263</a></h5>
+        <h5>Email:      <a href="mailto:support@whip.com">support@whip.com</a></h5>
       </article>
       <article class="footer-content">
         <h4>Follow Us</h4>
@@ -303,56 +303,26 @@
     </section>
     <article class="rights">&copy; Whip 2016</article>
   </footer>
+  <script>
+  $(document).ready(function() {
+    // RESET HERE
+    //localStorage.clear();
+    // activate carousel params
+    carouselInit();
+    // events on picker
+    vehiclePickerInit();
+    // restore form state
+    restoreRadio();
+    //
+    cartOnClick();
+    //
+    totalInit();
+    //
+    radioChange();
+    //
+    carouselChange();
+  });
+  </script>
 </body>
-<script type="text/javascript">
-$(document).ready(function() {
-
-
-
-  // RESET HERE
-  //localStorage.clear();
-  // activate carousel params
-  carouselInit();
-  // events on picker
-  vehiclePickerInit();
-  // restore form state
-  restoreRadio();
-
-
-  // CART BUTTON
-  $('#addToCart').on('click', function() {
-    console.log("added to cart");
-    saveElement("input-elements", "formdata");
-    var currentSlide = $('.carousel').slick('slickCurrentSlide');
-    saveElement("car" + currentSlide, "vehicledata");
-    saveRadio();
-    localStorage.setItem(basket_key, total);
-  });
-
-  // INIT TOTAL
-  total = 0;
-  total = $("#car0").attr("data-value").substring(1) * 1;
-  $("input[type=radio]").each(function(index) {
-    if ($(this).is(':checked')) {
-      //console.log($(this).val().substring(1) * 1);
-      total = total + $(this).val().substring(1) * 1;
-      $("#output").val("£" + total);
-    }
-  });
-
-  // RADIO CHANGE
-  $("input[type=radio]").change(function() {
-    calcTotal();
-    saveRadio();
-  });
-
-  $('.carousel').on('afterChange', function(event, slick, currentSlide) {
-    calcTotal();
-    //total = total + price;
-    //$("#output").val("£" + total);
-  });
-
-});
-</script>
 
 </html>

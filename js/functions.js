@@ -20,6 +20,29 @@ function carouselInit() {
     infinite: true,
     slidesToShow: 3,
     arrows: true,
+    responsive: [{
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          arrows: false,
+          dots: true
+        }
+      }, {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: true,
+          arrows: false,
+          dots: true
+        }
+      }
+      // You can unslick at a given breakpoint now by adding:
+      // settings: "unslick"
+      // instead of a settings object
+    ]
   });
 }
 
@@ -285,4 +308,60 @@ function basketContent() {
 function popmeUp() {
   var popup = document.getElementById('myPopup');
   popup.classList.toggle('show');
+}
+
+function cartOnClick() {
+  // CART BUTTON
+  $('#addToCart').on('click', function() {
+    console.log("added to cart");
+    saveElement("input-elements", "formdata");
+    var currentSlide = $('.carousel').slick('slickCurrentSlide');
+    saveElement("car" + currentSlide, "vehicledata");
+    saveRadio();
+    localStorage.setItem(basket_key, total);
+  });
+}
+
+function totalInit() {
+  // INIT TOTAL
+  total = 0;
+  total = $("#car0").attr("data-value").substring(1) * 1;
+  $("input[type=radio]").each(function(index) {
+    if ($(this).is(':checked')) {
+      //console.log($(this).val().substring(1) * 1);
+      total = total + $(this).val().substring(1) * 1;
+      $("#output").val("£" + total);
+    }
+  });
+}
+
+function radioChange() {
+  // RADIO CHANGE
+  $("input[type=radio]").change(function() {
+    calcTotal();
+    saveRadio();
+  });
+}
+//
+function carouselChange() {
+  $('.carousel').on('afterChange', function(event, slick, currentSlide) {
+    calcTotal();
+    //total = total + price;
+    //$("#output").val("£" + total);
+  });
+}
+
+
+function scrollerInit() {
+  //var scroll = 50;
+  $('header').addClass("topPage");
+  $(window).scroll(function(event) {
+    var scroll = $(window).scrollTop();
+    if (scroll <= 50) {
+      $('header').addClass("topPage");
+    } else if (scroll >= 50) {
+      $('header').removeClass("topPage");
+    }
+
+  });
 }
